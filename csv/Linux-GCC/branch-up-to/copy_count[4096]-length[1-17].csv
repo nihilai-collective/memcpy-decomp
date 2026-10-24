@@ -1,0 +1,3 @@
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Mean Convergence (%),Cycles/Byte,Position,Converged
+memcpy_decomp_up_to,1684.57,0.314243,203.798ms,36796,214,916991,20831,0.19196,1.46766,Win,true
+std_memcpy,1164.9,0.357098,295.055ms,36802,192,2.22252e+06,30129,0.0970748,2.12331,Loss,true
