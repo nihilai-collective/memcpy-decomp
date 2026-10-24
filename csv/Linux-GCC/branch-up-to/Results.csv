@@ -1,0 +1,13 @@
+# branch-up-to Stage Results
+#CPU: AMD EPYC 9V74 80-Core Processor-AVX512
+#OS: Linux-7.0.0-1017-azure
+#Compiler: GCC-16.0.1
+
+# branch-up-to Stage Config
+
+ClearCpuCachesBeforeIterations,MeasuredIterationCount,MaxIterationCount,IncludeNonConvergedResults,ConvergenceThreshold (%),MaxTimeInS,RseThreshold (%),MaxK,MinK
+true,60,400,true,5,10,10,100000,30
+
+Library,Wins,Ties,Losses
+memcpy_decomp_up_to,12,0,0
+std_memcpy,0,0,12

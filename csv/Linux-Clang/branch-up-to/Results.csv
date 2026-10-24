@@ -1,0 +1,13 @@
+# branch-up-to Stage Results
+#CPU: AMD EPYC 7763 64-Core Processor-AVX2
+#OS: Linux-7.0.0-1017-azure
+#Compiler: Clang-24.0.0
+
+# branch-up-to Stage Config
+
+ClearCpuCachesBeforeIterations,MeasuredIterationCount,MaxIterationCount,IncludeNonConvergedResults,ConvergenceThreshold (%),MaxTimeInS,RseThreshold (%),MaxK,MinK
+true,60,400,true,5,10,10,100000,30
+
+Library,Wins,Ties,Losses
+memcpy_decomp_up_to,12,0,0
+std_memcpy,0,0,12
