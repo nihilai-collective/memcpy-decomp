@@ -1,0 +1,13 @@
+# branch-decomp Stage Results
+#CPU: Apple M1 (Virtual)-NEON
+#OS: macOS-25.6.0
+#Compiler: Clang-23.1.4
+
+# branch-decomp Stage Config
+
+ClearCpuCachesBeforeIterations,MeasuredIterationCount,MaxIterationCount,IncludeNonConvergedResults,ConvergenceThreshold (%),MaxTimeInS,RseThreshold (%),MaxK,MinK
+true,60,400,true,5,10,10,100000,30
+
+Library,Wins,Ties,Losses
+memcpy_decomp,12,0,0
+std_memcpy,0,0,12

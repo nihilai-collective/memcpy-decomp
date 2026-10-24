@@ -1,0 +1,4514 @@
+{
+  "library": "memcpy-decomp",
+  "branch": "main",
+  "generatedAt": "2026-10-24T01:38:17.0022499Z",
+  "summary": {
+    "memcpy_decomp": {
+      "wins": 60,
+      "ties": 0,
+      "losses": 0
+    },
+    "std_memcpy": {
+      "wins": 0,
+      "ties": 0,
+      "losses": 120
+    },
+    "memcpy_decomp_up_to": {
+      "wins": 60,
+      "ties": 0,
+      "losses": 0
+    }
+  },
+  "platforms": {
+    "linux-clang": {
+      "cpu": "AMD EPYC 7763 64-Core Processor-AVX2",
+      "os": "Linux-7.0.0-1017-azure",
+      "compiler": "Clang-24.0.0",
+      "harness": {
+        "clearCpuCachesBeforeIterations": true,
+        "measuredIterationCount": 60,
+        "maxIterationCount": 400,
+        "maxTimeInS": 10.0,
+        "convergenceThreshold": 5.0,
+        "rseThreshold": 10.0,
+        "maxK": 100000,
+        "minK": 30
+      },
+      "wtl": {
+        "memcpy_decomp": {
+          "wins": 12,
+          "ties": 0,
+          "losses": 0
+        },
+        "std_memcpy": {
+          "wins": 0,
+          "ties": 0,
+          "losses": 24
+        },
+        "memcpy_decomp_up_to": {
+          "wins": 12,
+          "ties": 0,
+          "losses": 0
+        }
+      },
+      "tests": [
+        {
+          "name": "copy_count[4096]-length[1-127]",
+          "params": {
+            "group": "branch-decomp",
+            "count": 4096,
+            "length": "1-127"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp",
+              "mbps": 8582.3,
+              "rse": 0.309465,
+              "windowDuration": "284.109ms",
+              "fileSizeBytes": 261120,
+              "windowSamplesK": 384,
+              "variance": 3096190.0,
+              "latencyNs": 29015.9,
+              "cyclesPerByte": 0.271389,
+              "verdict": "win",
+              "converged": true
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 7027.07,
+              "rse": 0.249549,
+              "windowDuration": "346.91ms",
+              "fileSizeBytes": 261140,
+              "windowSamplesK": 384,
+              "variance": 3003590.0,
+              "latencyNs": 35440.4,
+              "cyclesPerByte": 0.331533,
+              "verdict": "loss",
+              "converged": true
+            }
+          ]
+        },
+        {
+          "name": "copy_count[4096]-length[1-128]",
+          "params": {
+            "group": "branch-decomp",
+            "count": 4096,
+            "length": "1-128"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp",
+              "mbps": 8602.63,
+              "rse": 0.280414,
+              "windowDuration": "286.359ms",
+              "fileSizeBytes": 263164,
+              "windowSamplesK": 384,
+              "variance": 2569920.0,
+              "latencyNs": 29173.9,
+              "cyclesPerByte": 0.270754,
+              "verdict": "win",
+              "converged": true
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 7091.83,
+              "rse": 0.342625,
+              "windowDuration": "346.429ms",
+              "fileSizeBytes": 263076,
+              "windowSamplesK": 214,
+              "variance": 3144110.0,
+              "latencyNs": 35377.1,
+              "cyclesPerByte": 0.328493,
+              "verdict": "loss",
+              "converged": true
+            }
+          ]
+        },
+        {
+          "name": "copy_count[4096]-length[1-129]",
+          "params": {
+            "group": "branch-decomp",
+            "count": 4096,
+            "length": "1-129"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp",
+              "mbps": 8629.11,
+              "rse": 0.433357,
+              "windowDuration": "287.121ms",
+              "fileSizeBytes": 265557,
+              "windowSamplesK": 214,
+              "variance": 3461710.0,
+              "latencyNs": 29348.9,
+              "cyclesPerByte": 0.26992,
+              "verdict": "win",
+              "converged": true
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 7144.47,
+              "rse": 0.274862,
+              "windowDuration": "346.095ms",
+              "fileSizeBytes": 265467,
+              "windowSamplesK": 384,
+              "variance": 3642860.0,
+              "latencyNs": 35435.7,
+              "cyclesPerByte": 0.326076,
+              "verdict": "loss",
+              "converged": true
+            }
+          ]
+        },
+        {
+          "name": "copy_count[4096]-length[1-15]",
+          "params": {
+            "group": "branch-decomp",
+            "count": 4096,
+            "length": "1-15"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp",
+              "mbps": 1373.26,
+              "rse": 0.439856,
+              "windowDuration": "221.368ms",
+              "fileSizeBytes": 32770,
+              "windowSamplesK": 384,
+              "variance": 3847650.0,
+              "latencyNs": 22757.3,
+              "cyclesPerByte": 1.69548,
+              "verdict": "win",
+              "converged": true
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 909.685,
+              "rse": 0.252097,
+              "windowDuration": "337.911ms",
+              "fileSizeBytes": 32775,
+              "windowSamplesK": 384,
+              "variance": 2881210.0,
+              "latencyNs": 34360.1,
+              "cyclesPerByte": 2.56087,
+              "verdict": "loss",
+              "converged": true
+            }
+          ]
+        },
+        {
+          "name": "copy_count[4096]-length[1-16]",
+          "params": {
+            "group": "branch-decomp",
+            "count": 4096,
+            "length": "1-16"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp",
+              "mbps": 1438.52,
+              "rse": 0.321788,
+              "windowDuration": "225.86ms",
+              "fileSizeBytes": 34770,
+              "windowSamplesK": 384,
+              "variance": 2112730.0,
+              "latencyNs": 23050.8,
+              "cyclesPerByte": 1.61871,
+              "verdict": "win",
+              "converged": true
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 942.323,
+              "rse": 0.36082,
+              "windowDuration": "344.689ms",
+              "fileSizeBytes": 34760,
+              "windowSamplesK": 192,
+              "variance": 3093500.0,
+              "latencyNs": 35179.1,
+              "cyclesPerByte": 2.47232,
+              "verdict": "loss",
+              "converged": true
+            }
+          ]
+        },
+        {
+          "name": "copy_count[4096]-length[1-17]",
+          "params": {
+            "group": "branch-decomp",
+            "count": 4096,
+            "length": "1-17"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp",
+              "mbps": 1497.35,
+              "rse": 0.40029,
+              "windowDuration": "230.02ms",
+              "fileSizeBytes": 36824,
+              "windowSamplesK": 214,
+              "variance": 1886150.0,
+              "latencyNs": 23453.4,
+              "cyclesPerByte": 1.55518,
+              "verdict": "win",
+              "converged": true
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 983.489,
+              "rse": 0.238012,
+              "windowDuration": "349.276ms",
+              "fileSizeBytes": 36803,
+              "windowSamplesK": 384,
+              "variance": 2770470.0,
+              "latencyNs": 35687.1,
+              "cyclesPerByte": 2.36887,
+              "verdict": "loss",
+              "converged": true
+            }
+          ]
+        },
+        {
+          "name": "copy_count[4096]-length[1-31]",
+          "params": {
+            "group": "branch-decomp",
+            "count": 4096,
+            "length": "1-31"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp",
+              "mbps": 2365.03,
+              "rse": 0.277857,
+              "windowDuration": "258.705ms",
+              "fileSizeBytes": 65549,
+              "windowSamplesK": 384,
+              "variance": 2071270.0,
+              "latencyNs": 26432.1,
+              "cyclesPerByte": 0.984752,
+              "verdict": "win",
+              "converged": true
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 1665.84,
+              "rse": 0.317057,
+              "windowDuration": "366.471ms",
+              "fileSizeBytes": 65576,
+              "windowSamplesK": 384,
+              "variance": 5440450.0,
+              "latencyNs": 37541.7,
+              "cyclesPerByte": 1.39854,
+              "verdict": "loss",
+              "converged": true
+            }
+          ]
+        },
+        {
+          "name": "copy_count[4096]-length[1-32]",
+          "params": {
+            "group": "branch-decomp",
+            "count": 4096,
+            "length": "1-32"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp",
+              "mbps": 2388.2,
+              "rse": 0.345653,
+              "windowDuration": "265.384ms",
+              "fileSizeBytes": 67732,
+              "windowSamplesK": 384,
+              "variance": 3356280.0,
+              "latencyNs": 27047.2,
+              "cyclesPerByte": 0.975233,
+              "verdict": "win",
+              "converged": true
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 1723.08,
+              "rse": 0.229703,
+              "windowDuration": "366.989ms",
+              "fileSizeBytes": 67718,
+              "windowSamplesK": 384,
+              "variance": 2846190.0,
+              "latencyNs": 37480.0,
+              "cyclesPerByte": 1.35215,
+              "verdict": "loss",
+              "converged": true
+            }
+          ]
+        },
+        {
+          "name": "copy_count[4096]-length[1-33]",
+          "params": {
+            "group": "branch-decomp",
+            "count": 4096,
+            "length": "1-33"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp",
+              "mbps": 2423.2,
+              "rse": 0.363163,
+              "windowDuration": "268.109ms",
+              "fileSizeBytes": 69796,
+              "windowSamplesK": 384,
+              "variance": 3821410.0,
+              "latencyNs": 27469.1,
+              "cyclesPerByte": 0.96116,
+              "verdict": "win",
+              "converged": true
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 1777.89,
+              "rse": 0.256182,
+              "windowDuration": "366.502ms",
+              "fileSizeBytes": 69831,
+              "windowSamplesK": 384,
+              "variance": 3536030.0,
+              "latencyNs": 37457.9,
+              "cyclesPerByte": 1.31045,
+              "verdict": "loss",
+              "converged": true
+            }
+          ]
+        },
+        {
+          "name": "copy_count[4096]-length[1-63]",
+          "params": {
+            "group": "branch-decomp",
+            "count": 4096,
+            "length": "1-63"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp",
+              "mbps": 5055.93,
+              "rse": 0.444267,
+              "windowDuration": "243.261ms",
+              "fileSizeBytes": 131792,
+              "windowSamplesK": 214,
+              "variance": 2610220.0,
+              "latencyNs": 24859.2,
+              "cyclesPerByte": 0.460598,
+              "verdict": "win",
+              "converged": true
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 3355.93,
+              "rse": 0.347018,
+              "windowDuration": "366.678ms",
+              "fileSizeBytes": 131764,
+              "windowSamplesK": 214,
+              "variance": 3613150.0,
+              "latencyNs": 37444.2,
+              "cyclesPerByte": 0.694256,
+              "verdict": "loss",
+              "converged": true
+            }
+          ]
+        },
+        {
+          "name": "copy_count[4096]-length[1-64]",
+          "params": {
+            "group": "branch-decomp",
+            "count": 4096,
+            "length": "1-64"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp",
+              "mbps": 4967.68,
+              "rse": 0.573744,
+              "windowDuration": "250.221ms",
+              "fileSizeBytes": 133044,
+              "windowSamplesK": 214,
+              "variance": 4595480.0,
+              "latencyNs": 25541.2,
+              "cyclesPerByte": 0.468795,
+              "verdict": "win",
+              "converged": true
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 3373.2,
+              "rse": 0.248893,
+              "windowDuration": "367.391ms",
+              "fileSizeBytes": 133023,
+              "windowSamplesK": 384,
+              "variance": 3364550.0,
+              "latencyNs": 37608.5,
+              "cyclesPerByte": 0.690687,
+              "verdict": "loss",
+              "converged": true
+            }
+          ]
+        },
+        {
+          "name": "copy_count[4096]-length[1-65]",
+          "params": {
+            "group": "branch-decomp",
+            "count": 4096,
+            "length": "1-65"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp",
+              "mbps": 5006.04,
+              "rse": 0.280406,
+              "windowDuration": "252.088ms",
+              "fileSizeBytes": 135092,
+              "windowSamplesK": 384,
+              "variance": 1999750.0,
+              "latencyNs": 25735.7,
+              "cyclesPerByte": 0.465198,
+              "verdict": "win",
+              "converged": true
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 3378.58,
+              "rse": 0.308409,
+              "windowDuration": "372.786ms",
+              "fileSizeBytes": 135108,
+              "windowSamplesK": 384,
+              "variance": 5312290.0,
+              "latencyNs": 38137.2,
+              "cyclesPerByte": 0.689606,
+              "verdict": "loss",
+              "converged": true
+            }
+          ]
+        },
+        {
+          "name": "copy_count[4096]-length[1-127]",
+          "params": {
+            "group": "branch-up-to",
+            "count": 4096,
+            "length": "1-127"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp_up_to",
+              "mbps": 9233.54,
+              "rse": 0.429958,
+              "windowDuration": "264.225ms",
+              "fileSizeBytes": 261193,
+              "windowSamplesK": 214,
+              "variance": 2879070.0,
+              "latencyNs": 26977.0,
+              "cyclesPerByte": 0.252233,
+              "verdict": "win",
+              "converged": true
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 7025.85,
+              "rse": 0.324052,
+              "windowDuration": "347.097ms",
+              "fileSizeBytes": 261054,
+              "windowSamplesK": 214,
+              "variance": 2821660.0,
+              "latencyNs": 35434.9,
+              "cyclesPerByte": 0.331583,
+              "verdict": "loss",
+              "converged": true
+            }
+          ]
+        },
+        {
+          "name": "copy_count[4096]-length[1-128]",
+          "params": {
+            "group": "branch-up-to",
+            "count": 4096,
+            "length": "1-128"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp_up_to",
+              "mbps": 9133.35,
+              "rse": 0.282675,
+              "windowDuration": "269.214ms",
+              "fileSizeBytes": 263185,
+              "windowSamplesK": 384,
+              "variance": 2317220.0,
+              "latencyNs": 27480.9,
+              "cyclesPerByte": 0.25501,
+              "verdict": "win",
+              "converged": true
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 7083.03,
+              "rse": 0.290643,
+              "windowDuration": "346.384ms",
+              "fileSizeBytes": 263145,
+              "windowSamplesK": 384,
+              "variance": 4071970.0,
+              "latencyNs": 35430.4,
+              "cyclesPerByte": 0.328899,
+              "verdict": "loss",
+              "converged": true
+            }
+          ]
+        },
+        {
+          "name": "copy_count[4096]-length[1-129]",
+          "params": {
+            "group": "branch-up-to",
+            "count": 4096,
+            "length": "1-129"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp_up_to",
+              "mbps": 9223.45,
+              "rse": 0.286924,
+              "windowDuration": "269.585ms",
+              "fileSizeBytes": 265580,
+              "windowSamplesK": 384,
+              "variance": 2383790.0,
+              "latencyNs": 27460.1,
+              "cyclesPerByte": 0.252508,
+              "verdict": "win",
+              "converged": true
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 7165.56,
+              "rse": 0.262085,
+              "windowDuration": "346.223ms",
+              "fileSizeBytes": 265668,
+              "windowSamplesK": 384,
+              "variance": 3297570.0,
+              "latencyNs": 35358.1,
+              "cyclesPerByte": 0.325116,
+              "verdict": "loss",
+              "converged": true
+            }
+          ]
+        },
+        {
+          "name": "copy_count[4096]-length[1-15]",
+          "params": {
+            "group": "branch-up-to",
+            "count": 4096,
+            "length": "1-15"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp_up_to",
+              "mbps": 1503.66,
+              "rse": 0.497266,
+              "windowDuration": "203.757ms",
+              "fileSizeBytes": 32771,
+              "windowSamplesK": 192,
+              "variance": 2051020.0,
+              "latencyNs": 20784.8,
+              "cyclesPerByte": 1.54824,
+              "verdict": "win",
+              "converged": true
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 908.153,
+              "rse": 0.294798,
+              "windowDuration": "336.917ms",
+              "fileSizeBytes": 32768,
+              "windowSamplesK": 384,
+              "variance": 3951440.0,
+              "latencyNs": 34410.2,
+              "cyclesPerByte": 2.56521,
+              "verdict": "loss",
+              "converged": true
+            }
+          ]
+        },
+        {
+          "name": "copy_count[4096]-length[1-16]",
+          "params": {
+            "group": "branch-up-to",
+            "count": 4096,
+            "length": "1-16"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp_up_to",
+              "mbps": 1491.02,
+              "rse": 0.32987,
+              "windowDuration": "217.577ms",
+              "fileSizeBytes": 34765,
+              "windowSamplesK": 384,
+              "variance": 2066000.0,
+              "latencyNs": 22236.0,
+              "cyclesPerByte": 1.56166,
+              "verdict": "win",
+              "converged": true
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 943.505,
+              "rse": 0.241847,
+              "windowDuration": "344.783ms",
+              "fileSizeBytes": 34773,
+              "windowSamplesK": 384,
+              "variance": 2774630.0,
+              "latencyNs": 35147.7,
+              "cyclesPerByte": 2.4692,
+              "verdict": "loss",
+              "converged": true
+            }
+          ]
+        },
+        {
+          "name": "copy_count[4096]-length[1-17]",
+          "params": {
+            "group": "branch-up-to",
+            "count": 4096,
+            "length": "1-17"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp_up_to",
+              "mbps": 1501.1,
+              "rse": 0.29614,
+              "windowDuration": "229.867ms",
+              "fileSizeBytes": 36819,
+              "windowSamplesK": 384,
+              "variance": 1842650.0,
+              "latencyNs": 23391.6,
+              "cyclesPerByte": 1.55125,
+              "verdict": "win",
+              "converged": true
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 984.88,
+              "rse": 0.32028,
+              "windowDuration": "349.316ms",
+              "fileSizeBytes": 36825,
+              "windowSamplesK": 214,
+              "variance": 2791170.0,
+              "latencyNs": 35657.9,
+              "cyclesPerByte": 2.3655,
+              "verdict": "loss",
+              "converged": true
+            }
+          ]
+        },
+        {
+          "name": "copy_count[4096]-length[1-31]",
+          "params": {
+            "group": "branch-up-to",
+            "count": 4096,
+            "length": "1-31"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp_up_to",
+              "mbps": 2753.29,
+              "rse": 0.442067,
+              "windowDuration": "222.861ms",
+              "fileSizeBytes": 65573,
+              "windowSamplesK": 214,
+              "variance": 2157450.0,
+              "latencyNs": 22713.0,
+              "cyclesPerByte": 0.845731,
+              "verdict": "win",
+              "converged": true
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 1668.66,
+              "rse": 0.344251,
+              "windowDuration": "366.548ms",
+              "fileSizeBytes": 65553,
+              "windowSamplesK": 214,
+              "variance": 3559680.0,
+              "latencyNs": 37464.8,
+              "cyclesPerByte": 1.39623,
+              "verdict": "loss",
+              "converged": true
+            }
+          ]
+        },
+        {
+          "name": "copy_count[4096]-length[1-32]",
+          "params": {
+            "group": "branch-up-to",
+            "count": 4096,
+            "length": "1-32"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp_up_to",
+              "mbps": 2477.6,
+              "rse": 0.284095,
+              "windowDuration": "255.486ms",
+              "fileSizeBytes": 67738,
+              "windowSamplesK": 384,
+              "variance": 2106960.0,
+              "latencyNs": 26073.5,
+              "cyclesPerByte": 0.94002,
+              "verdict": "win",
+              "converged": true
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 1724.89,
+              "rse": 0.332881,
+              "windowDuration": "366.908ms",
+              "fileSizeBytes": 67745,
+              "windowSamplesK": 214,
+              "variance": 3326720.0,
+              "latencyNs": 37455.3,
+              "cyclesPerByte": 1.35074,
+              "verdict": "loss",
+              "converged": true
+            }
+          ]
+        },
+        {
+          "name": "copy_count[4096]-length[1-33]",
+          "params": {
+            "group": "branch-up-to",
+            "count": 4096,
+            "length": "1-33"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp_up_to",
+              "mbps": 2608.36,
+              "rse": 0.30546,
+              "windowDuration": "249.995ms",
+              "fileSizeBytes": 69826,
+              "windowSamplesK": 384,
+              "variance": 2335300.0,
+              "latencyNs": 25530.0,
+              "cyclesPerByte": 0.892845,
+              "verdict": "win",
+              "converged": true
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 1778.8,
+              "rse": 0.261697,
+              "windowDuration": "366.624ms",
+              "fileSizeBytes": 69826,
+              "windowSamplesK": 384,
+              "variance": 3685600.0,
+              "latencyNs": 37436.1,
+              "cyclesPerByte": 1.3098,
+              "verdict": "loss",
+              "converged": true
+            }
+          ]
+        },
+        {
+          "name": "copy_count[4096]-length[1-63]",
+          "params": {
+            "group": "branch-up-to",
+            "count": 4096,
+            "length": "1-63"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp_up_to",
+              "mbps": 5064.62,
+              "rse": 0.46731,
+              "windowDuration": "244.075ms",
+              "fileSizeBytes": 131765,
+              "windowSamplesK": 192,
+              "variance": 2581170.0,
+              "latencyNs": 24811.5,
+              "cyclesPerByte": 0.459825,
+              "verdict": "win",
+              "converged": true
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 3337.24,
+              "rse": 0.440503,
+              "windowDuration": "366.603ms",
+              "fileSizeBytes": 131711,
+              "windowSamplesK": 214,
+              "variance": 5882740.0,
+              "latencyNs": 37638.6,
+              "cyclesPerByte": 0.698112,
+              "verdict": "loss",
+              "converged": true
+            }
+          ]
+        },
+        {
+          "name": "copy_count[4096]-length[1-64]",
+          "params": {
+            "group": "branch-up-to",
+            "count": 4096,
+            "length": "1-64"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp_up_to",
+              "mbps": 4712.73,
+              "rse": 0.378478,
+              "windowDuration": "264.705ms",
+              "fileSizeBytes": 133069,
+              "windowSamplesK": 192,
+              "variance": 1994280.0,
+              "latencyNs": 26927.9,
+              "cyclesPerByte": 0.494199,
+              "verdict": "win",
+              "converged": true
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 3370.54,
+              "rse": 0.275522,
+              "windowDuration": "368.04ms",
+              "fileSizeBytes": 133059,
+              "windowSamplesK": 384,
+              "variance": 4131740.0,
+              "latencyNs": 37648.2,
+              "cyclesPerByte": 0.69123,
+              "verdict": "loss",
+              "converged": true
+            }
+          ]
+        },
+        {
+          "name": "copy_count[4096]-length[1-65]",
+          "params": {
+            "group": "branch-up-to",
+            "count": 4096,
+            "length": "1-65"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp_up_to",
+              "mbps": 4778.22,
+              "rse": 0.278432,
+              "windowDuration": "264.39ms",
+              "fileSizeBytes": 135101,
+              "windowSamplesK": 384,
+              "variance": 2164470.0,
+              "latencyNs": 26964.4,
+              "cyclesPerByte": 0.487425,
+              "verdict": "win",
+              "converged": true
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 3391.15,
+              "rse": 0.368412,
+              "windowDuration": "371.991ms",
+              "fileSizeBytes": 135110,
+              "windowSamplesK": 192,
+              "variance": 3762270.0,
+              "latencyNs": 37996.3,
+              "cyclesPerByte": 0.687053,
+              "verdict": "loss",
+              "converged": true
+            }
+          ]
+        }
+      ]
+    },
+    "linux-gcc": {
+      "cpu": "AMD EPYC 9V74 80-Core Processor-AVX512",
+      "os": "Linux-7.0.0-1017-azure",
+      "compiler": "GCC-16.0.1",
+      "harness": {
+        "clearCpuCachesBeforeIterations": true,
+        "measuredIterationCount": 60,
+        "maxIterationCount": 400,
+        "maxTimeInS": 10.0,
+        "convergenceThreshold": 5.0,
+        "rseThreshold": 10.0,
+        "maxK": 100000,
+        "minK": 30
+      },
+      "wtl": {
+        "memcpy_decomp": {
+          "wins": 12,
+          "ties": 0,
+          "losses": 0
+        },
+        "std_memcpy": {
+          "wins": 0,
+          "ties": 0,
+          "losses": 24
+        },
+        "memcpy_decomp_up_to": {
+          "wins": 12,
+          "ties": 0,
+          "losses": 0
+        }
+      },
+      "tests": [
+        {
+          "name": "copy_count[4096]-length[1-127]",
+          "params": {
+            "group": "branch-decomp",
+            "count": 4096,
+            "length": "1-127"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp",
+              "mbps": 9509.6,
+              "rse": 0.288309,
+              "windowDuration": "256.094ms",
+              "fileSizeBytes": 261120,
+              "windowSamplesK": 384,
+              "variance": 2188770.0,
+              "latencyNs": 26186.5,
+              "cyclesPerByte": 0.260057,
+              "verdict": "win",
+              "converged": true
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 7755.06,
+              "rse": 0.275604,
+              "windowDuration": "314.371ms",
+              "fileSizeBytes": 261083,
+              "windowSamplesK": 214,
+              "variance": 1675600.0,
+              "latencyNs": 32106.5,
+              "cyclesPerByte": 0.318955,
+              "verdict": "loss",
+              "converged": true
+            }
+          ]
+        },
+        {
+          "name": "copy_count[4096]-length[1-128]",
+          "params": {
+            "group": "branch-decomp",
+            "count": 4096,
+            "length": "1-128"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp",
+              "mbps": 9538.85,
+              "rse": 0.268874,
+              "windowDuration": "257.849ms",
+              "fileSizeBytes": 263222,
+              "windowSamplesK": 214,
+              "variance": 1071430.0,
+              "latencyNs": 26316.4,
+              "cyclesPerByte": 0.259257,
+              "verdict": "win",
+              "converged": true
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 7709.32,
+              "rse": 0.245857,
+              "windowDuration": "321.093ms",
+              "fileSizeBytes": 263076,
+              "windowSamplesK": 214,
+              "variance": 1369970.0,
+              "latencyNs": 32543.6,
+              "cyclesPerByte": 0.32083,
+              "verdict": "loss",
+              "converged": true
+            }
+          ]
+        },
+        {
+          "name": "copy_count[4096]-length[1-129]",
+          "params": {
+            "group": "branch-decomp",
+            "count": 4096,
+            "length": "1-129"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp",
+              "mbps": 9520.78,
+              "rse": 0.307064,
+              "windowDuration": "260.486ms",
+              "fileSizeBytes": 265494,
+              "windowSamplesK": 384,
+              "variance": 2560670.0,
+              "latencyNs": 26593.9,
+              "cyclesPerByte": 0.259751,
+              "verdict": "win",
+              "converged": true
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 7762.04,
+              "rse": 0.384551,
+              "windowDuration": "318.993ms",
+              "fileSizeBytes": 265394,
+              "windowSamplesK": 214,
+              "variance": 3364740.0,
+              "latencyNs": 32607.3,
+              "cyclesPerByte": 0.318654,
+              "verdict": "loss",
+              "converged": true
+            }
+          ]
+        },
+        {
+          "name": "copy_count[4096]-length[1-15]",
+          "params": {
+            "group": "branch-decomp",
+            "count": 4096,
+            "length": "1-15"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp",
+              "mbps": 1600.53,
+              "rse": 0.23295,
+              "windowDuration": "191.269ms",
+              "fileSizeBytes": 32770,
+              "windowSamplesK": 384,
+              "variance": 794463.0,
+              "latencyNs": 19525.8,
+              "cyclesPerByte": 1.54456,
+              "verdict": "win",
+              "converged": true
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 1049.81,
+              "rse": 0.318913,
+              "windowDuration": "297.294ms",
+              "fileSizeBytes": 32765,
+              "windowSamplesK": 30,
+              "variance": 270306.0,
+              "latencyNs": 29764.3,
+              "cyclesPerByte": 2.356,
+              "verdict": "loss",
+              "converged": true
+            }
+          ]
+        },
+        {
+          "name": "copy_count[4096]-length[1-16]",
+          "params": {
+            "group": "branch-decomp",
+            "count": 4096,
+            "length": "1-16"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp",
+              "mbps": 1627.59,
+              "rse": 0.300371,
+              "windowDuration": "199.797ms",
+              "fileSizeBytes": 34770,
+              "windowSamplesK": 384,
+              "variance": 1438020.0,
+              "latencyNs": 20373.2,
+              "cyclesPerByte": 1.51897,
+              "verdict": "win",
+              "converged": true
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 1105.61,
+              "rse": 0.272296,
+              "windowDuration": "292.769ms",
+              "fileSizeBytes": 34762,
+              "windowSamplesK": 384,
+              "variance": 2559860.0,
+              "latencyNs": 29984.8,
+              "cyclesPerByte": 2.23708,
+              "verdict": "loss",
+              "converged": true
+            }
+          ]
+        },
+        {
+          "name": "copy_count[4096]-length[1-17]",
+          "params": {
+            "group": "branch-decomp",
+            "count": 4096,
+            "length": "1-17"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp",
+              "mbps": 1669.71,
+              "rse": 0.377973,
+              "windowDuration": "205.87ms",
+              "fileSizeBytes": 36824,
+              "windowSamplesK": 214,
+              "variance": 1352420.0,
+              "latencyNs": 21032.3,
+              "cyclesPerByte": 1.48073,
+              "verdict": "win",
+              "converged": true
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 1167.26,
+              "rse": 0.182858,
+              "windowDuration": "294.335ms",
+              "fileSizeBytes": 36803,
+              "windowSamplesK": 384,
+              "variance": 1160880.0,
+              "latencyNs": 30068.7,
+              "cyclesPerByte": 2.11896,
+              "verdict": "loss",
+              "converged": true
+            }
+          ]
+        },
+        {
+          "name": "copy_count[4096]-length[1-31]",
+          "params": {
+            "group": "branch-decomp",
+            "count": 4096,
+            "length": "1-31"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp",
+              "mbps": 2620.15,
+              "rse": 0.438502,
+              "windowDuration": "240.014ms",
+              "fileSizeBytes": 65545,
+              "windowSamplesK": 96,
+              "variance": 1050590.0,
+              "latencyNs": 23856.7,
+              "cyclesPerByte": 0.943697,
+              "verdict": "win",
+              "converged": true
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 2020.91,
+              "rse": 0.274273,
+              "windowDuration": "302.769ms",
+              "fileSizeBytes": 65576,
+              "windowSamplesK": 384,
+              "variance": 2766280.0,
+              "latencyNs": 30945.6,
+              "cyclesPerByte": 1.22388,
+              "verdict": "loss",
+              "converged": true
+            }
+          ]
+        },
+        {
+          "name": "copy_count[4096]-length[1-32]",
+          "params": {
+            "group": "branch-decomp",
+            "count": 4096,
+            "length": "1-32"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp",
+              "mbps": 2611.48,
+              "rse": 0.292966,
+              "windowDuration": "242.229ms",
+              "fileSizeBytes": 67732,
+              "windowSamplesK": 384,
+              "variance": 2016410.0,
+              "latencyNs": 24734.7,
+              "cyclesPerByte": 0.946918,
+              "verdict": "win",
+              "converged": true
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 2062.66,
+              "rse": 0.305412,
+              "windowDuration": "306.384ms",
+              "fileSizeBytes": 67720,
+              "windowSamplesK": 214,
+              "variance": 1956880.0,
+              "latencyNs": 31310.5,
+              "cyclesPerByte": 1.19914,
+              "verdict": "loss",
+              "converged": true
+            }
+          ]
+        },
+        {
+          "name": "copy_count[4096]-length[1-33]",
+          "params": {
+            "group": "branch-decomp",
+            "count": 4096,
+            "length": "1-33"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp",
+              "mbps": 2651.11,
+              "rse": 0.217141,
+              "windowDuration": "245.486ms",
+              "fileSizeBytes": 69796,
+              "windowSamplesK": 384,
+              "variance": 1141360.0,
+              "latencyNs": 25107.6,
+              "cyclesPerByte": 0.932761,
+              "verdict": "win",
+              "converged": true
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 2122.93,
+              "rse": 0.34214,
+              "windowDuration": "307.065ms",
+              "fileSizeBytes": 69839,
+              "windowSamplesK": 214,
+              "variance": 2465770.0,
+              "latencyNs": 31373.7,
+              "cyclesPerByte": 1.16509,
+              "verdict": "loss",
+              "converged": true
+            }
+          ]
+        },
+        {
+          "name": "copy_count[4096]-length[1-63]",
+          "params": {
+            "group": "branch-decomp",
+            "count": 4096,
+            "length": "1-63"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp",
+              "mbps": 5478.04,
+              "rse": 0.426822,
+              "windowDuration": "223.998ms",
+              "fileSizeBytes": 131792,
+              "windowSamplesK": 214,
+              "variance": 2052270.0,
+              "latencyNs": 22943.7,
+              "cyclesPerByte": 0.451365,
+              "verdict": "win",
+              "converged": true
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 4021.88,
+              "rse": 0.370615,
+              "windowDuration": "306.509ms",
+              "fileSizeBytes": 131780,
+              "windowSamplesK": 96,
+              "variance": 1287520.0,
+              "latencyNs": 31247.8,
+              "cyclesPerByte": 0.614972,
+              "verdict": "loss",
+              "converged": true
+            }
+          ]
+        },
+        {
+          "name": "copy_count[4096]-length[1-64]",
+          "params": {
+            "group": "branch-decomp",
+            "count": 4096,
+            "length": "1-64"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp",
+              "mbps": 5401.75,
+              "rse": 0.296249,
+              "windowDuration": "230.197ms",
+              "fileSizeBytes": 133035,
+              "windowSamplesK": 192,
+              "variance": 929569.0,
+              "latencyNs": 23487.3,
+              "cyclesPerByte": 0.457756,
+              "verdict": "win",
+              "converged": true
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 3967.01,
+              "rse": 0.2325,
+              "windowDuration": "312.654ms",
+              "fileSizeBytes": 133023,
+              "windowSamplesK": 384,
+              "variance": 2122790.0,
+              "latencyNs": 31979.0,
+              "cyclesPerByte": 0.623495,
+              "verdict": "loss",
+              "converged": true
+            }
+          ]
+        },
+        {
+          "name": "copy_count[4096]-length[1-65]",
+          "params": {
+            "group": "branch-decomp",
+            "count": 4096,
+            "length": "1-65"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp",
+              "mbps": 5393.22,
+              "rse": 0.31078,
+              "windowDuration": "233.234ms",
+              "fileSizeBytes": 135107,
+              "windowSamplesK": 192,
+              "variance": 1058450.0,
+              "latencyNs": 23890.8,
+              "cyclesPerByte": 0.458494,
+              "verdict": "win",
+              "converged": true
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 4033.68,
+              "rse": 0.282038,
+              "windowDuration": "311.896ms",
+              "fileSizeBytes": 135108,
+              "windowSamplesK": 384,
+              "variance": 3116790.0,
+              "latencyNs": 31943.4,
+              "cyclesPerByte": 0.613186,
+              "verdict": "loss",
+              "converged": true
+            }
+          ]
+        },
+        {
+          "name": "copy_count[4096]-length[1-127]",
+          "params": {
+            "group": "branch-up-to",
+            "count": 4096,
+            "length": "1-127"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp_up_to",
+              "mbps": 10687.3,
+              "rse": 0.206456,
+              "windowDuration": "228.232ms",
+              "fileSizeBytes": 261107,
+              "windowSamplesK": 384,
+              "variance": 888554.0,
+              "latencyNs": 23299.6,
+              "cyclesPerByte": 0.231369,
+              "verdict": "win",
+              "converged": true
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 7759.09,
+              "rse": 0.238858,
+              "windowDuration": "314.847ms",
+              "fileSizeBytes": 261054,
+              "windowSamplesK": 214,
+              "variance": 1256990.0,
+              "latencyNs": 32086.3,
+              "cyclesPerByte": 0.318796,
+              "verdict": "loss",
+              "converged": true
+            }
+          ]
+        },
+        {
+          "name": "copy_count[4096]-length[1-128]",
+          "params": {
+            "group": "branch-up-to",
+            "count": 4096,
+            "length": "1-128"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp_up_to",
+              "mbps": 10493.8,
+              "rse": 0.35455,
+              "windowDuration": "233.7ms",
+              "fileSizeBytes": 263185,
+              "windowSamplesK": 384,
+              "variance": 2761490.0,
+              "latencyNs": 23918.2,
+              "cyclesPerByte": 0.235646,
+              "verdict": "win",
+              "converged": true
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 7694.61,
+              "rse": 0.250752,
+              "windowDuration": "319.029ms",
+              "fileSizeBytes": 263145,
+              "windowSamplesK": 384,
+              "variance": 2568250.0,
+              "latencyNs": 32614.3,
+              "cyclesPerByte": 0.321461,
+              "verdict": "loss",
+              "converged": true
+            }
+          ]
+        },
+        {
+          "name": "copy_count[4096]-length[1-129]",
+          "params": {
+            "group": "branch-up-to",
+            "count": 4096,
+            "length": "1-129"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp_up_to",
+              "mbps": 10493.9,
+              "rse": 0.390218,
+              "windowDuration": "236.292ms",
+              "fileSizeBytes": 265407,
+              "windowSamplesK": 96,
+              "variance": 850424.0,
+              "latencyNs": 24119.9,
+              "cyclesPerByte": 0.235645,
+              "verdict": "win",
+              "converged": true
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 7800.71,
+              "rse": 0.178636,
+              "windowDuration": "318.412ms",
+              "fileSizeBytes": 265668,
+              "windowSamplesK": 384,
+              "variance": 1292650.0,
+              "latencyNs": 32479.2,
+              "cyclesPerByte": 0.317095,
+              "verdict": "loss",
+              "converged": true
+            }
+          ]
+        },
+        {
+          "name": "copy_count[4096]-length[1-15]",
+          "params": {
+            "group": "branch-up-to",
+            "count": 4096,
+            "length": "1-15"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp_up_to",
+              "mbps": 1778.89,
+              "rse": 0.463871,
+              "windowDuration": "171.93ms",
+              "fileSizeBytes": 32780,
+              "windowSamplesK": 214,
+              "variance": 1422060.0,
+              "latencyNs": 17573.4,
+              "cyclesPerByte": 1.3895,
+              "verdict": "win",
+              "converged": true
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 1045.55,
+              "rse": 0.214935,
+              "windowDuration": "293.047ms",
+              "fileSizeBytes": 32768,
+              "windowSamplesK": 384,
+              "variance": 1584720.0,
+              "latencyNs": 29888.4,
+              "cyclesPerByte": 2.36565,
+              "verdict": "loss",
+              "converged": true
+            }
+          ]
+        },
+        {
+          "name": "copy_count[4096]-length[1-16]",
+          "params": {
+            "group": "branch-up-to",
+            "count": 4096,
+            "length": "1-16"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp_up_to",
+              "mbps": 1642.59,
+              "rse": 0.23408,
+              "windowDuration": "197.654ms",
+              "fileSizeBytes": 34765,
+              "windowSamplesK": 384,
+              "variance": 857189.0,
+              "latencyNs": 20184.1,
+              "cyclesPerByte": 1.50502,
+              "verdict": "win",
+              "converged": true
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 1106.98,
+              "rse": 0.274716,
+              "windowDuration": "292.696ms",
+              "fileSizeBytes": 34772,
+              "windowSamplesK": 214,
+              "variance": 1449350.0,
+              "latencyNs": 29956.9,
+              "cyclesPerByte": 2.23424,
+              "verdict": "loss",
+              "converged": true
+            }
+          ]
+        },
+        {
+          "name": "copy_count[4096]-length[1-17]",
+          "params": {
+            "group": "branch-up-to",
+            "count": 4096,
+            "length": "1-17"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp_up_to",
+              "mbps": 1684.57,
+              "rse": 0.314243,
+              "windowDuration": "203.798ms",
+              "fileSizeBytes": 36796,
+              "windowSamplesK": 214,
+              "variance": 916991.0,
+              "latencyNs": 20831.0,
+              "cyclesPerByte": 1.46766,
+              "verdict": "win",
+              "converged": true
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 1164.9,
+              "rse": 0.357098,
+              "windowDuration": "295.055ms",
+              "fileSizeBytes": 36802,
+              "windowSamplesK": 192,
+              "variance": 2222520.0,
+              "latencyNs": 30129.0,
+              "cyclesPerByte": 2.12331,
+              "verdict": "loss",
+              "converged": true
+            }
+          ]
+        },
+        {
+          "name": "copy_count[4096]-length[1-31]",
+          "params": {
+            "group": "branch-up-to",
+            "count": 4096,
+            "length": "1-31"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp_up_to",
+              "mbps": 3221.62,
+              "rse": 0.347036,
+              "windowDuration": "190.213ms",
+              "fileSizeBytes": 65575,
+              "windowSamplesK": 384,
+              "variance": 1742610.0,
+              "latencyNs": 19411.6,
+              "cyclesPerByte": 0.767341,
+              "verdict": "win",
+              "converged": true
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 2021.54,
+              "rse": 0.26783,
+              "windowDuration": "302.045ms",
+              "fileSizeBytes": 65553,
+              "windowSamplesK": 214,
+              "variance": 1468070.0,
+              "latencyNs": 30924.9,
+              "cyclesPerByte": 1.2235,
+              "verdict": "loss",
+              "converged": true
+            }
+          ]
+        },
+        {
+          "name": "copy_count[4096]-length[1-32]",
+          "params": {
+            "group": "branch-up-to",
+            "count": 4096,
+            "length": "1-32"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp_up_to",
+              "mbps": 2828.98,
+              "rse": 0.319843,
+              "windowDuration": "223.663ms",
+              "fileSizeBytes": 67732,
+              "windowSamplesK": 192,
+              "variance": 1024000.0,
+              "latencyNs": 22833.0,
+              "cyclesPerByte": 0.87406,
+              "verdict": "win",
+              "converged": true
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 2057.76,
+              "rse": 0.35648,
+              "windowDuration": "307.044ms",
+              "fileSizeBytes": 67712,
+              "windowSamplesK": 192,
+              "variance": 2402790.0,
+              "latencyNs": 31381.4,
+              "cyclesPerByte": 1.20195,
+              "verdict": "loss",
+              "converged": true
+            }
+          ]
+        },
+        {
+          "name": "copy_count[4096]-length[1-33]",
+          "params": {
+            "group": "branch-up-to",
+            "count": 4096,
+            "length": "1-33"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp_up_to",
+              "mbps": 2794.02,
+              "rse": 0.314201,
+              "windowDuration": "233.091ms",
+              "fileSizeBytes": 69826,
+              "windowSamplesK": 384,
+              "variance": 2153420.0,
+              "latencyNs": 23833.7,
+              "cyclesPerByte": 0.885039,
+              "verdict": "win",
+              "converged": true
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 2131.65,
+              "rse": 0.336834,
+              "windowDuration": "305.765ms",
+              "fileSizeBytes": 69824,
+              "windowSamplesK": 214,
+              "variance": 2369310.0,
+              "latencyNs": 31238.4,
+              "cyclesPerByte": 1.16032,
+              "verdict": "loss",
+              "converged": true
+            }
+          ]
+        },
+        {
+          "name": "copy_count[4096]-length[1-63]",
+          "params": {
+            "group": "branch-up-to",
+            "count": 4096,
+            "length": "1-63"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp_up_to",
+              "mbps": 5879.03,
+              "rse": 0.219807,
+              "windowDuration": "209.226ms",
+              "fileSizeBytes": 131679,
+              "windowSamplesK": 384,
+              "variance": 846521.0,
+              "latencyNs": 21360.5,
+              "cyclesPerByte": 0.420556,
+              "verdict": "win",
+              "converged": true
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 3991.05,
+              "rse": 0.272473,
+              "windowDuration": "307.813ms",
+              "fileSizeBytes": 131725,
+              "windowSamplesK": 192,
+              "variance": 1412250.0,
+              "latencyNs": 31476.2,
+              "cyclesPerByte": 0.619696,
+              "verdict": "loss",
+              "converged": true
+            }
+          ]
+        },
+        {
+          "name": "copy_count[4096]-length[1-64]",
+          "params": {
+            "group": "branch-up-to",
+            "count": 4096,
+            "length": "1-64"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp_up_to",
+              "mbps": 5329.83,
+              "rse": 0.27461,
+              "windowDuration": "233.111ms",
+              "fileSizeBytes": 133033,
+              "windowSamplesK": 214,
+              "variance": 914400.0,
+              "latencyNs": 23803.7,
+              "cyclesPerByte": 0.463966,
+              "verdict": "win",
+              "converged": true
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 3963.98,
+              "rse": 0.242204,
+              "windowDuration": "313.169ms",
+              "fileSizeBytes": 133059,
+              "windowSamplesK": 384,
+              "variance": 2308430.0,
+              "latencyNs": 32011.9,
+              "cyclesPerByte": 0.62397,
+              "verdict": "loss",
+              "converged": true
+            }
+          ]
+        },
+        {
+          "name": "copy_count[4096]-length[1-65]",
+          "params": {
+            "group": "branch-up-to",
+            "count": 4096,
+            "length": "1-65"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp_up_to",
+              "mbps": 5344.09,
+              "rse": 0.324372,
+              "windowDuration": "236.313ms",
+              "fileSizeBytes": 135101,
+              "windowSamplesK": 384,
+              "variance": 2348470.0,
+              "latencyNs": 24109.2,
+              "cyclesPerByte": 0.462716,
+              "verdict": "win",
+              "converged": true
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 4039.23,
+              "rse": 0.373891,
+              "windowDuration": "312.067ms",
+              "fileSizeBytes": 135103,
+              "windowSamplesK": 96,
+              "variance": 1365510.0,
+              "latencyNs": 31898.2,
+              "cyclesPerByte": 0.612336,
+              "verdict": "loss",
+              "converged": true
+            }
+          ]
+        }
+      ]
+    },
+    "macos-clang": {
+      "cpu": "Apple M1 (Virtual)-NEON",
+      "os": "macOS-25.6.0",
+      "compiler": "Clang-23.1.4",
+      "harness": {
+        "clearCpuCachesBeforeIterations": true,
+        "measuredIterationCount": 60,
+        "maxIterationCount": 400,
+        "maxTimeInS": 10.0,
+        "convergenceThreshold": 5.0,
+        "rseThreshold": 10.0,
+        "maxK": 100000,
+        "minK": 30
+      },
+      "wtl": {
+        "memcpy_decomp": {
+          "wins": 12,
+          "ties": 0,
+          "losses": 0
+        },
+        "std_memcpy": {
+          "wins": 0,
+          "ties": 0,
+          "losses": 24
+        },
+        "memcpy_decomp_up_to": {
+          "wins": 12,
+          "ties": 0,
+          "losses": 0
+        }
+      },
+      "tests": [
+        {
+          "name": "copy_count[4096]-length[1-127]",
+          "params": {
+            "group": "branch-decomp",
+            "count": 4096,
+            "length": "1-127"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp",
+              "mbps": 9336.36,
+              "rse": 1.0272,
+              "windowDuration": "287.008ms",
+              "fileSizeBytes": 261193,
+              "windowSamplesK": 214,
+              "variance": 16072800.0,
+              "latencyNs": 26679.9,
+              "cyclesPerByte": null,
+              "verdict": "win",
+              "converged": true
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 4383.32,
+              "rse": 0.999907,
+              "windowDuration": "575.752ms",
+              "fileSizeBytes": 261096,
+              "windowSamplesK": 96,
+              "variance": 30973200.0,
+              "latencyNs": 56806.4,
+              "cyclesPerByte": null,
+              "verdict": "loss",
+              "converged": true
+            }
+          ]
+        },
+        {
+          "name": "copy_count[4096]-length[1-128]",
+          "params": {
+            "group": "branch-decomp",
+            "count": 4096,
+            "length": "1-128"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp",
+              "mbps": 8658.3,
+              "rse": 2.23514,
+              "windowDuration": "284.773ms",
+              "fileSizeBytes": 263222,
+              "windowSamplesK": 214,
+              "variance": 89867500.0,
+              "latencyNs": 28992.8,
+              "cyclesPerByte": null,
+              "verdict": "win",
+              "converged": true
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 4302.99,
+              "rse": 0.509961,
+              "windowDuration": "597.073ms",
+              "fileSizeBytes": 263076,
+              "windowSamplesK": 214,
+              "variance": 18919400.0,
+              "latencyNs": 58305.7,
+              "cyclesPerByte": null,
+              "verdict": "loss",
+              "converged": true
+            }
+          ]
+        },
+        {
+          "name": "copy_count[4096]-length[1-129]",
+          "params": {
+            "group": "branch-decomp",
+            "count": 4096,
+            "length": "1-129"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp",
+              "mbps": 8937.01,
+              "rse": 1.73658,
+              "windowDuration": "263.471ms",
+              "fileSizeBytes": 265333,
+              "windowSamplesK": 30,
+              "variance": 7252860.0,
+              "latencyNs": 28313.8,
+              "cyclesPerByte": null,
+              "verdict": "win",
+              "converged": true
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 3728.65,
+              "rse": 1.4307,
+              "windowDuration": "632.323ms",
+              "fileSizeBytes": 265467,
+              "windowSamplesK": 384,
+              "variance": 362365000.0,
+              "latencyNs": 67898.3,
+              "cyclesPerByte": null,
+              "verdict": "loss",
+              "converged": false
+            }
+          ]
+        },
+        {
+          "name": "copy_count[4096]-length[1-15]",
+          "params": {
+            "group": "branch-decomp",
+            "count": 4096,
+            "length": "1-15"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp",
+              "mbps": 1550.3,
+              "rse": 0.463543,
+              "windowDuration": "285.031ms",
+              "fileSizeBytes": 32806,
+              "windowSamplesK": 30,
+              "variance": 262526.0,
+              "latencyNs": 20180.7,
+              "cyclesPerByte": null,
+              "verdict": "win",
+              "converged": true
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 606.966,
+              "rse": 3.33737,
+              "windowDuration": "619.007ms",
+              "fileSizeBytes": 32765,
+              "windowSamplesK": 30,
+              "variance": 88556000.0,
+              "latencyNs": 51480.6,
+              "cyclesPerByte": null,
+              "verdict": "loss",
+              "converged": false
+            }
+          ]
+        },
+        {
+          "name": "copy_count[4096]-length[1-16]",
+          "params": {
+            "group": "branch-decomp",
+            "count": 4096,
+            "length": "1-16"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp",
+              "mbps": 1643.27,
+              "rse": 1.15725,
+              "windowDuration": "292.843ms",
+              "fileSizeBytes": 34792,
+              "windowSamplesK": 30,
+              "variance": 1638030.0,
+              "latencyNs": 20191.7,
+              "cyclesPerByte": null,
+              "verdict": "win",
+              "converged": false
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 631.349,
+              "rse": 3.53997,
+              "windowDuration": "631.059ms",
+              "fileSizeBytes": 34751,
+              "windowSamplesK": 30,
+              "variance": 103587000.0,
+              "latencyNs": 52491.9,
+              "cyclesPerByte": null,
+              "verdict": "loss",
+              "converged": true
+            }
+          ]
+        },
+        {
+          "name": "copy_count[4096]-length[1-17]",
+          "params": {
+            "group": "branch-decomp",
+            "count": 4096,
+            "length": "1-17"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp",
+              "mbps": 1079.3,
+              "rse": 1.48836,
+              "windowDuration": "277.477ms",
+              "fileSizeBytes": 36802,
+              "windowSamplesK": 384,
+              "variance": 89951700.0,
+              "latencyNs": 32518.6,
+              "cyclesPerByte": null,
+              "verdict": "win",
+              "converged": false
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 712.12,
+              "rse": 1.74025,
+              "windowDuration": "614.048ms",
+              "fileSizeBytes": 36828,
+              "windowSamplesK": 48,
+              "variance": 35360400.0,
+              "latencyNs": 49320.4,
+              "cyclesPerByte": null,
+              "verdict": "loss",
+              "converged": false
+            }
+          ]
+        },
+        {
+          "name": "copy_count[4096]-length[1-31]",
+          "params": {
+            "group": "branch-decomp",
+            "count": 4096,
+            "length": "1-31"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp",
+              "mbps": 2130.45,
+              "rse": 1.45365,
+              "windowDuration": "322.223ms",
+              "fileSizeBytes": 65545,
+              "windowSamplesK": 96,
+              "variance": 17463100.0,
+              "latencyNs": 29340.4,
+              "cyclesPerByte": null,
+              "verdict": "win",
+              "converged": true
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 1010.87,
+              "rse": 1.66952,
+              "windowDuration": "675.789ms",
+              "fileSizeBytes": 65561,
+              "windowSamplesK": 214,
+              "variance": 228189000.0,
+              "latencyNs": 61851.3,
+              "cyclesPerByte": null,
+              "verdict": "loss",
+              "converged": true
+            }
+          ]
+        },
+        {
+          "name": "copy_count[4096]-length[1-32]",
+          "params": {
+            "group": "branch-decomp",
+            "count": 4096,
+            "length": "1-32"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp",
+              "mbps": 1403.02,
+              "rse": 6.22607,
+              "windowDuration": "372.673ms",
+              "fileSizeBytes": 67739,
+              "windowSamplesK": 192,
+              "variance": 1577920000.0,
+              "latencyNs": 46044.5,
+              "cyclesPerByte": null,
+              "verdict": "win",
+              "converged": true
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 906.247,
+              "rse": 3.11881,
+              "windowDuration": "750.554ms",
+              "fileSizeBytes": 67721,
+              "windowSamplesK": 96,
+              "variance": 474247000.0,
+              "latencyNs": 71265.2,
+              "cyclesPerByte": null,
+              "verdict": "loss",
+              "converged": true
+            }
+          ]
+        },
+        {
+          "name": "copy_count[4096]-length[1-33]",
+          "params": {
+            "group": "branch-decomp",
+            "count": 4096,
+            "length": "1-33"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp",
+              "mbps": 1703.37,
+              "rse": 3.18964,
+              "windowDuration": "375.658ms",
+              "fileSizeBytes": 69819,
+              "windowSamplesK": 192,
+              "variance": 298478000.0,
+              "latencyNs": 39089.9,
+              "cyclesPerByte": null,
+              "verdict": "win",
+              "converged": false
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 823.108,
+              "rse": 0.511182,
+              "windowDuration": "704.811ms",
+              "fileSizeBytes": 69805,
+              "windowSamplesK": 48,
+              "variance": 8204450.0,
+              "latencyNs": 80877.6,
+              "cyclesPerByte": null,
+              "verdict": "loss",
+              "converged": true
+            }
+          ]
+        },
+        {
+          "name": "copy_count[4096]-length[1-63]",
+          "params": {
+            "group": "branch-decomp",
+            "count": 4096,
+            "length": "1-63"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp",
+              "mbps": 4039.02,
+              "rse": 3.04159,
+              "windowDuration": "346.213ms",
+              "fileSizeBytes": 131792,
+              "windowSamplesK": 214,
+              "variance": 191707000.0,
+              "latencyNs": 31118.0,
+              "cyclesPerByte": null,
+              "verdict": "win",
+              "converged": false
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 1598.64,
+              "rse": 1.86889,
+              "windowDuration": "803.308ms",
+              "fileSizeBytes": 131779,
+              "windowSamplesK": 192,
+              "variance": 414442000.0,
+              "latencyNs": 78613.5,
+              "cyclesPerByte": null,
+              "verdict": "loss",
+              "converged": true
+            }
+          ]
+        },
+        {
+          "name": "copy_count[4096]-length[1-64]",
+          "params": {
+            "group": "branch-decomp",
+            "count": 4096,
+            "length": "1-64"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp",
+              "mbps": 5707.83,
+              "rse": 1.60574,
+              "windowDuration": "318.793ms",
+              "fileSizeBytes": 133039,
+              "windowSamplesK": 96,
+              "variance": 12230300.0,
+              "latencyNs": 22228.3,
+              "cyclesPerByte": null,
+              "verdict": "win",
+              "converged": false
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 1869.4,
+              "rse": 1.7186,
+              "windowDuration": "751.234ms",
+              "fileSizeBytes": 133053,
+              "windowSamplesK": 192,
+              "variance": 261274000.0,
+              "latencyNs": 67877.0,
+              "cyclesPerByte": null,
+              "verdict": "loss",
+              "converged": true
+            }
+          ]
+        },
+        {
+          "name": "copy_count[4096]-length[1-65]",
+          "params": {
+            "group": "branch-decomp",
+            "count": 4096,
+            "length": "1-65"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp",
+              "mbps": 6306.46,
+              "rse": 0.652198,
+              "windowDuration": "216.562ms",
+              "fileSizeBytes": 135095,
+              "windowSamplesK": 96,
+              "variance": 1704270.0,
+              "latencyNs": 20429.3,
+              "cyclesPerByte": null,
+              "verdict": "win",
+              "converged": true
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 2171.8,
+              "rse": 0.692555,
+              "windowDuration": "691.465ms",
+              "fileSizeBytes": 135105,
+              "windowSamplesK": 96,
+              "variance": 16206300.0,
+              "latencyNs": 59326.9,
+              "cyclesPerByte": null,
+              "verdict": "loss",
+              "converged": true
+            }
+          ]
+        },
+        {
+          "name": "copy_count[4096]-length[1-127]",
+          "params": {
+            "group": "branch-up-to",
+            "count": 4096,
+            "length": "1-127"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp_up_to",
+              "mbps": 11575.0,
+              "rse": 1.52248,
+              "windowDuration": "222.008ms",
+              "fileSizeBytes": 260987,
+              "windowSamplesK": 30,
+              "variance": 3215290.0,
+              "latencyNs": 21502.9,
+              "cyclesPerByte": null,
+              "verdict": "win",
+              "converged": true
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 4556.6,
+              "rse": 0.704074,
+              "windowDuration": "549.198ms",
+              "fileSizeBytes": 261099,
+              "windowSamplesK": 96,
+              "variance": 14211400.0,
+              "latencyNs": 54646.7,
+              "cyclesPerByte": null,
+              "verdict": "loss",
+              "converged": true
+            }
+          ]
+        },
+        {
+          "name": "copy_count[4096]-length[1-128]",
+          "params": {
+            "group": "branch-up-to",
+            "count": 4096,
+            "length": "1-128"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp_up_to",
+              "mbps": 10823.2,
+              "rse": 0.580536,
+              "windowDuration": "281.146ms",
+              "fileSizeBytes": 263185,
+              "windowSamplesK": 384,
+              "variance": 6959900.0,
+              "latencyNs": 23190.3,
+              "cyclesPerByte": null,
+              "verdict": "win",
+              "converged": true
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 4721.6,
+              "rse": 0.381014,
+              "windowDuration": "564.412ms",
+              "fileSizeBytes": 263163,
+              "windowSamplesK": 192,
+              "variance": 7875080.0,
+              "latencyNs": 53154.1,
+              "cyclesPerByte": null,
+              "verdict": "loss",
+              "converged": true
+            }
+          ]
+        },
+        {
+          "name": "copy_count[4096]-length[1-129]",
+          "params": {
+            "group": "branch-up-to",
+            "count": 4096,
+            "length": "1-129"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp_up_to",
+              "mbps": 10550.7,
+              "rse": 0.912729,
+              "windowDuration": "236.733ms",
+              "fileSizeBytes": 265407,
+              "windowSamplesK": 96,
+              "variance": 4602750.0,
+              "latencyNs": 23990.1,
+              "cyclesPerByte": null,
+              "verdict": "win",
+              "converged": true
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 4628.63,
+              "rse": 1.16782,
+              "windowDuration": "584.195ms",
+              "fileSizeBytes": 265842,
+              "windowSamplesK": 30,
+              "variance": 12274800.0,
+              "latencyNs": 54773.7,
+              "cyclesPerByte": null,
+              "verdict": "loss",
+              "converged": false
+            }
+          ]
+        },
+        {
+          "name": "copy_count[4096]-length[1-15]",
+          "params": {
+            "group": "branch-up-to",
+            "count": 4096,
+            "length": "1-15"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp_up_to",
+              "mbps": 1689.77,
+              "rse": 0.830432,
+              "windowDuration": "176.385ms",
+              "fileSizeBytes": 32786,
+              "windowSamplesK": 96,
+              "variance": 2266790.0,
+              "latencyNs": 18504.0,
+              "cyclesPerByte": null,
+              "verdict": "win",
+              "converged": true
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 736.069,
+              "rse": 0.0857001,
+              "windowDuration": "423.085ms",
+              "fileSizeBytes": 32759,
+              "windowSamplesK": 30,
+              "variance": 39691.4,
+              "latencyNs": 42443.0,
+              "cyclesPerByte": null,
+              "verdict": "loss",
+              "converged": true
+            }
+          ]
+        },
+        {
+          "name": "copy_count[4096]-length[1-16]",
+          "params": {
+            "group": "branch-up-to",
+            "count": 4096,
+            "length": "1-16"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp_up_to",
+              "mbps": 1509.6,
+              "rse": 1.42439,
+              "windowDuration": "212.316ms",
+              "fileSizeBytes": 34763,
+              "windowSamplesK": 30,
+              "variance": 2935560.0,
+              "latencyNs": 21961.1,
+              "cyclesPerByte": null,
+              "verdict": "win",
+              "converged": true
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 692.232,
+              "rse": 0.794857,
+              "windowDuration": "452.304ms",
+              "fileSizeBytes": 34772,
+              "windowSamplesK": 214,
+              "variance": 31028300.0,
+              "latencyNs": 47905.2,
+              "cyclesPerByte": null,
+              "verdict": "loss",
+              "converged": true
+            }
+          ]
+        },
+        {
+          "name": "copy_count[4096]-length[1-17]",
+          "params": {
+            "group": "branch-up-to",
+            "count": 4096,
+            "length": "1-17"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp_up_to",
+              "mbps": 1728.76,
+              "rse": 0.50152,
+              "windowDuration": "210.143ms",
+              "fileSizeBytes": 36810,
+              "windowSamplesK": 192,
+              "variance": 1991330.0,
+              "latencyNs": 20306.4,
+              "cyclesPerByte": null,
+              "verdict": "win",
+              "converged": true
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 733.593,
+              "rse": 0.478449,
+              "windowDuration": "476.481ms",
+              "fileSizeBytes": 36825,
+              "windowSamplesK": 214,
+              "variance": 11226700.0,
+              "latencyNs": 47872.3,
+              "cyclesPerByte": null,
+              "verdict": "loss",
+              "converged": true
+            }
+          ]
+        },
+        {
+          "name": "copy_count[4096]-length[1-31]",
+          "params": {
+            "group": "branch-up-to",
+            "count": 4096,
+            "length": "1-31"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp_up_to",
+              "mbps": 3319.74,
+              "rse": 0.90704,
+              "windowDuration": "201.362ms",
+              "fileSizeBytes": 65600,
+              "windowSamplesK": 96,
+              "variance": 2804910.0,
+              "latencyNs": 18845.1,
+              "cyclesPerByte": null,
+              "verdict": "win",
+              "converged": true
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 1174.55,
+              "rse": 0.837335,
+              "windowDuration": "554.476ms",
+              "fileSizeBytes": 65546,
+              "windowSamplesK": 96,
+              "variance": 19064300.0,
+              "latencyNs": 53220.0,
+              "cyclesPerByte": null,
+              "verdict": "loss",
+              "converged": true
+            }
+          ]
+        },
+        {
+          "name": "copy_count[4096]-length[1-32]",
+          "params": {
+            "group": "branch-up-to",
+            "count": 4096,
+            "length": "1-32"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp_up_to",
+              "mbps": 2623.57,
+              "rse": 1.75744,
+              "windowDuration": "267.541ms",
+              "fileSizeBytes": 67755,
+              "windowSamplesK": 30,
+              "variance": 5620530.0,
+              "latencyNs": 24629.1,
+              "cyclesPerByte": null,
+              "verdict": "win",
+              "converged": true
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 1027.34,
+              "rse": 2.66248,
+              "windowDuration": "620.274ms",
+              "fileSizeBytes": 67715,
+              "windowSamplesK": 30,
+              "variance": 84030400.0,
+              "latencyNs": 62859.6,
+              "cyclesPerByte": null,
+              "verdict": "loss",
+              "converged": true
+            }
+          ]
+        },
+        {
+          "name": "copy_count[4096]-length[1-33]",
+          "params": {
+            "group": "branch-up-to",
+            "count": 4096,
+            "length": "1-33"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp_up_to",
+              "mbps": 2812.76,
+              "rse": 0.920641,
+              "windowDuration": "297.193ms",
+              "fileSizeBytes": 69827,
+              "windowSamplesK": 96,
+              "variance": 4560670.0,
+              "latencyNs": 23674.9,
+              "cyclesPerByte": null,
+              "verdict": "win",
+              "converged": false
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 1239.59,
+              "rse": 1.90055,
+              "windowDuration": "579.204ms",
+              "fileSizeBytes": 69790,
+              "windowSamplesK": 30,
+              "variance": 31240300.0,
+              "latencyNs": 53693.1,
+              "cyclesPerByte": null,
+              "verdict": "loss",
+              "converged": true
+            }
+          ]
+        },
+        {
+          "name": "copy_count[4096]-length[1-63]",
+          "params": {
+            "group": "branch-up-to",
+            "count": 4096,
+            "length": "1-63"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp_up_to",
+              "mbps": 5788.29,
+              "rse": 0.711658,
+              "windowDuration": "236.274ms",
+              "fileSizeBytes": 131737,
+              "windowSamplesK": 96,
+              "variance": 2290480.0,
+              "latencyNs": 21704.8,
+              "cyclesPerByte": null,
+              "verdict": "win",
+              "converged": true
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 1971.97,
+              "rse": 0.800768,
+              "windowDuration": "645.846ms",
+              "fileSizeBytes": 131697,
+              "windowSamplesK": 96,
+              "variance": 24971200.0,
+              "latencyNs": 63690.9,
+              "cyclesPerByte": null,
+              "verdict": "loss",
+              "converged": true
+            }
+          ]
+        },
+        {
+          "name": "copy_count[4096]-length[1-64]",
+          "params": {
+            "group": "branch-up-to",
+            "count": 4096,
+            "length": "1-64"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp_up_to",
+              "mbps": 3819.42,
+              "rse": 3.57053,
+              "windowDuration": "298.185ms",
+              "fileSizeBytes": 133033,
+              "windowSamplesK": 214,
+              "variance": 301025000.0,
+              "latencyNs": 33217.1,
+              "cyclesPerByte": null,
+              "verdict": "win",
+              "converged": true
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 2043.31,
+              "rse": 1.24565,
+              "windowDuration": "766.222ms",
+              "fileSizeBytes": 133059,
+              "windowSamplesK": 384,
+              "variance": 229793000.0,
+              "latencyNs": 62102.3,
+              "cyclesPerByte": null,
+              "verdict": "loss",
+              "converged": false
+            }
+          ]
+        },
+        {
+          "name": "copy_count[4096]-length[1-65]",
+          "params": {
+            "group": "branch-up-to",
+            "count": 4096,
+            "length": "1-65"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp_up_to",
+              "mbps": 4790.72,
+              "rse": 3.36249,
+              "windowDuration": "281.048ms",
+              "fileSizeBytes": 135101,
+              "windowSamplesK": 384,
+              "variance": 314027000.0,
+              "latencyNs": 26894.1,
+              "cyclesPerByte": null,
+              "verdict": "win",
+              "converged": false
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 1689.38,
+              "rse": 1.65298,
+              "windowDuration": "700.727ms",
+              "fileSizeBytes": 135115,
+              "windowSamplesK": 214,
+              "variance": 340175000.0,
+              "latencyNs": 76274.1,
+              "cyclesPerByte": null,
+              "verdict": "loss",
+              "converged": true
+            }
+          ]
+        }
+      ]
+    },
+    "macos-gcc": {
+      "cpu": "Apple M1 (Virtual)-NEON",
+      "os": "macOS-25.6.0",
+      "compiler": "GCC-16.2.0",
+      "harness": {
+        "clearCpuCachesBeforeIterations": true,
+        "measuredIterationCount": 60,
+        "maxIterationCount": 400,
+        "maxTimeInS": 10.0,
+        "convergenceThreshold": 5.0,
+        "rseThreshold": 10.0,
+        "maxK": 100000,
+        "minK": 30
+      },
+      "wtl": {
+        "memcpy_decomp": {
+          "wins": 12,
+          "ties": 0,
+          "losses": 0
+        },
+        "std_memcpy": {
+          "wins": 0,
+          "ties": 0,
+          "losses": 24
+        },
+        "memcpy_decomp_up_to": {
+          "wins": 12,
+          "ties": 0,
+          "losses": 0
+        }
+      },
+      "tests": [
+        {
+          "name": "copy_count[4096]-length[1-127]",
+          "params": {
+            "group": "branch-decomp",
+            "count": 4096,
+            "length": "1-127"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp",
+              "mbps": 11497.9,
+              "rse": 0.226052,
+              "windowDuration": "211.731ms",
+              "fileSizeBytes": 261193,
+              "windowSamplesK": 214,
+              "variance": 513240.0,
+              "latencyNs": 21664.3,
+              "cyclesPerByte": null,
+              "verdict": "win",
+              "converged": true
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 5013.57,
+              "rse": 0.255347,
+              "windowDuration": "488.134ms",
+              "fileSizeBytes": 261083,
+              "windowSamplesK": 214,
+              "variance": 3441410.0,
+              "latencyNs": 49662.8,
+              "cyclesPerByte": null,
+              "verdict": "loss",
+              "converged": true
+            }
+          ]
+        },
+        {
+          "name": "copy_count[4096]-length[1-128]",
+          "params": {
+            "group": "branch-decomp",
+            "count": 4096,
+            "length": "1-128"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp",
+              "mbps": 10715.1,
+              "rse": 0.276451,
+              "windowDuration": "228.9ms",
+              "fileSizeBytes": 263222,
+              "windowSamplesK": 214,
+              "variance": 897646.0,
+              "latencyNs": 23427.6,
+              "cyclesPerByte": null,
+              "verdict": "win",
+              "converged": true
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 5062.88,
+              "rse": 0.117963,
+              "windowDuration": "485.515ms",
+              "fileSizeBytes": 263172,
+              "windowSamplesK": 384,
+              "variance": 1313140.0,
+              "latencyNs": 49572.7,
+              "cyclesPerByte": null,
+              "verdict": "loss",
+              "converged": true
+            }
+          ]
+        },
+        {
+          "name": "copy_count[4096]-length[1-129]",
+          "params": {
+            "group": "branch-decomp",
+            "count": 4096,
+            "length": "1-129"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp",
+              "mbps": 11737.9,
+              "rse": 0.205489,
+              "windowDuration": "213.775ms",
+              "fileSizeBytes": 265557,
+              "windowSamplesK": 214,
+              "variance": 420654.0,
+              "latencyNs": 21575.8,
+              "cyclesPerByte": null,
+              "verdict": "win",
+              "converged": true
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 5147.36,
+              "rse": 0.182885,
+              "windowDuration": "483.328ms",
+              "fileSizeBytes": 265811,
+              "windowSamplesK": 48,
+              "variance": 389381.0,
+              "latencyNs": 49248.0,
+              "cyclesPerByte": null,
+              "verdict": "loss",
+              "converged": true
+            }
+          ]
+        },
+        {
+          "name": "copy_count[4096]-length[1-15]",
+          "params": {
+            "group": "branch-decomp",
+            "count": 4096,
+            "length": "1-15"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp",
+              "mbps": 1800.63,
+              "rse": 0.190225,
+              "windowDuration": "172.378ms",
+              "fileSizeBytes": 32770,
+              "windowSamplesK": 384,
+              "variance": 418567.0,
+              "latencyNs": 17356.0,
+              "cyclesPerByte": null,
+              "verdict": "win",
+              "converged": true
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 713.382,
+              "rse": 0.26224,
+              "windowDuration": "435.99ms",
+              "fileSizeBytes": 32770,
+              "windowSamplesK": 214,
+              "variance": 2824380.0,
+              "latencyNs": 43808.3,
+              "cyclesPerByte": null,
+              "verdict": "loss",
+              "converged": true
+            }
+          ]
+        },
+        {
+          "name": "copy_count[4096]-length[1-16]",
+          "params": {
+            "group": "branch-decomp",
+            "count": 4096,
+            "length": "1-16"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp",
+              "mbps": 1801.58,
+              "rse": 0.283533,
+              "windowDuration": "181.62ms",
+              "fileSizeBytes": 34775,
+              "windowSamplesK": 192,
+              "variance": 523023.0,
+              "latencyNs": 18408.0,
+              "cyclesPerByte": null,
+              "verdict": "win",
+              "converged": true
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 765.861,
+              "rse": 0.210259,
+              "windowDuration": "425.47ms",
+              "fileSizeBytes": 34765,
+              "windowSamplesK": 96,
+              "variance": 795371.0,
+              "latencyNs": 43290.7,
+              "cyclesPerByte": null,
+              "verdict": "loss",
+              "converged": true
+            }
+          ]
+        },
+        {
+          "name": "copy_count[4096]-length[1-17]",
+          "params": {
+            "group": "branch-decomp",
+            "count": 4096,
+            "length": "1-17"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp",
+              "mbps": 1888.65,
+              "rse": 0.304226,
+              "windowDuration": "181.912ms",
+              "fileSizeBytes": 36802,
+              "windowSamplesK": 384,
+              "variance": 1227360.0,
+              "latencyNs": 18583.3,
+              "cyclesPerByte": null,
+              "verdict": "win",
+              "converged": true
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 801.629,
+              "rse": 0.301825,
+              "windowDuration": "428.472ms",
+              "fileSizeBytes": 36828,
+              "windowSamplesK": 48,
+              "variance": 839390.0,
+              "latencyNs": 43813.3,
+              "cyclesPerByte": null,
+              "verdict": "loss",
+              "converged": true
+            }
+          ]
+        },
+        {
+          "name": "copy_count[4096]-length[1-31]",
+          "params": {
+            "group": "branch-decomp",
+            "count": 4096,
+            "length": "1-31"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp",
+              "mbps": 2865.94,
+              "rse": 0.230343,
+              "windowDuration": "223.292ms",
+              "fileSizeBytes": 65545,
+              "windowSamplesK": 96,
+              "variance": 242304.0,
+              "latencyNs": 21810.7,
+              "cyclesPerByte": null,
+              "verdict": "win",
+              "converged": true
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 1257.27,
+              "rse": 0.158874,
+              "windowDuration": "486.662ms",
+              "fileSizeBytes": 65576,
+              "windowSamplesK": 384,
+              "variance": 2398130.0,
+              "latencyNs": 49741.3,
+              "cyclesPerByte": null,
+              "verdict": "loss",
+              "converged": true
+            }
+          ]
+        },
+        {
+          "name": "copy_count[4096]-length[1-32]",
+          "params": {
+            "group": "branch-decomp",
+            "count": 4096,
+            "length": "1-32"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp",
+              "mbps": 3132.01,
+              "rse": 0.300062,
+              "windowDuration": "207.087ms",
+              "fileSizeBytes": 67723,
+              "windowSamplesK": 214,
+              "variance": 819334.0,
+              "latencyNs": 20621.2,
+              "cyclesPerByte": null,
+              "verdict": "win",
+              "converged": true
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 1313.21,
+              "rse": 0.117881,
+              "windowDuration": "485.415ms",
+              "fileSizeBytes": 67711,
+              "windowSamplesK": 48,
+              "variance": 161284.0,
+              "latencyNs": 49173.3,
+              "cyclesPerByte": null,
+              "verdict": "loss",
+              "converged": true
+            }
+          ]
+        },
+        {
+          "name": "copy_count[4096]-length[1-33]",
+          "params": {
+            "group": "branch-decomp",
+            "count": 4096,
+            "length": "1-33"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp",
+              "mbps": 3174.1,
+              "rse": 0.192506,
+              "windowDuration": "207.603ms",
+              "fileSizeBytes": 69796,
+              "windowSamplesK": 384,
+              "variance": 625815.0,
+              "latencyNs": 20970.7,
+              "cyclesPerByte": null,
+              "verdict": "win",
+              "converged": true
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 1344.49,
+              "rse": 0.127793,
+              "windowDuration": "485.216ms",
+              "fileSizeBytes": 69839,
+              "windowSamplesK": 214,
+              "variance": 857654.0,
+              "latencyNs": 49538.4,
+              "cyclesPerByte": null,
+              "verdict": "loss",
+              "converged": true
+            }
+          ]
+        },
+        {
+          "name": "copy_count[4096]-length[1-63]",
+          "params": {
+            "group": "branch-decomp",
+            "count": 4096,
+            "length": "1-63"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp",
+              "mbps": 6256.66,
+              "rse": 0.232633,
+              "windowDuration": "199.346ms",
+              "fileSizeBytes": 131754,
+              "windowSamplesK": 96,
+              "variance": 209536.0,
+              "latencyNs": 20082.7,
+              "cyclesPerByte": null,
+              "verdict": "win",
+              "converged": true
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 2308.84,
+              "rse": 0.135255,
+              "windowDuration": "535.869ms",
+              "fileSizeBytes": 131779,
+              "windowSamplesK": 192,
+              "variance": 1040680.0,
+              "latencyNs": 54432.0,
+              "cyclesPerByte": null,
+              "verdict": "loss",
+              "converged": true
+            }
+          ]
+        },
+        {
+          "name": "copy_count[4096]-length[1-64]",
+          "params": {
+            "group": "branch-decomp",
+            "count": 4096,
+            "length": "1-64"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp",
+              "mbps": 6732.51,
+              "rse": 0.247776,
+              "windowDuration": "190.033ms",
+              "fileSizeBytes": 133044,
+              "windowSamplesK": 214,
+              "variance": 466622.0,
+              "latencyNs": 18845.9,
+              "cyclesPerByte": null,
+              "verdict": "win",
+              "converged": true
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 2336.47,
+              "rse": 0.220994,
+              "windowDuration": "530.305ms",
+              "fileSizeBytes": 133023,
+              "windowSamplesK": 384,
+              "variance": 5528740.0,
+              "latencyNs": 54296.0,
+              "cyclesPerByte": null,
+              "verdict": "loss",
+              "converged": true
+            }
+          ]
+        },
+        {
+          "name": "copy_count[4096]-length[1-65]",
+          "params": {
+            "group": "branch-decomp",
+            "count": 4096,
+            "length": "1-65"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp",
+              "mbps": 6331.1,
+              "rse": 0.202534,
+              "windowDuration": "201.253ms",
+              "fileSizeBytes": 135092,
+              "windowSamplesK": 384,
+              "variance": 652273.0,
+              "latencyNs": 20349.3,
+              "cyclesPerByte": null,
+              "verdict": "win",
+              "converged": true
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 2405.54,
+              "rse": 0.172111,
+              "windowDuration": "561.043ms",
+              "fileSizeBytes": 135195,
+              "windowSamplesK": 30,
+              "variance": 255289.0,
+              "latencyNs": 53597.9,
+              "cyclesPerByte": null,
+              "verdict": "loss",
+              "converged": true
+            }
+          ]
+        },
+        {
+          "name": "copy_count[4096]-length[1-127]",
+          "params": {
+            "group": "branch-up-to",
+            "count": 4096,
+            "length": "1-127"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp_up_to",
+              "mbps": 12237.1,
+              "rse": 0.227339,
+              "windowDuration": "198.085ms",
+              "fileSizeBytes": 261193,
+              "windowSamplesK": 214,
+              "variance": 458278.0,
+              "latencyNs": 20355.6,
+              "cyclesPerByte": null,
+              "verdict": "win",
+              "converged": true
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 5033.1,
+              "rse": 0.149149,
+              "windowDuration": "485.974ms",
+              "fileSizeBytes": 261156,
+              "windowSamplesK": 192,
+              "variance": 1045860.0,
+              "latencyNs": 49484.0,
+              "cyclesPerByte": null,
+              "verdict": "loss",
+              "converged": true
+            }
+          ]
+        },
+        {
+          "name": "copy_count[4096]-length[1-128]",
+          "params": {
+            "group": "branch-up-to",
+            "count": 4096,
+            "length": "1-128"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp_up_to",
+              "mbps": 12292.3,
+              "rse": 0.484635,
+              "windowDuration": "192.075ms",
+              "fileSizeBytes": 263150,
+              "windowSamplesK": 48,
+              "variance": 469907.0,
+              "latencyNs": 20416.0,
+              "cyclesPerByte": null,
+              "verdict": "win",
+              "converged": true
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 5056.44,
+              "rse": 0.155623,
+              "windowDuration": "485.742ms",
+              "fileSizeBytes": 263145,
+              "windowSamplesK": 384,
+              "variance": 2290760.0,
+              "latencyNs": 49630.7,
+              "cyclesPerByte": null,
+              "verdict": "loss",
+              "converged": true
+            }
+          ]
+        },
+        {
+          "name": "copy_count[4096]-length[1-129]",
+          "params": {
+            "group": "branch-up-to",
+            "count": 4096,
+            "length": "1-129"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp_up_to",
+              "mbps": 12696.2,
+              "rse": 0.323412,
+              "windowDuration": "195.253ms",
+              "fileSizeBytes": 265407,
+              "windowSamplesK": 96,
+              "variance": 399080.0,
+              "latencyNs": 19936.0,
+              "cyclesPerByte": null,
+              "verdict": "win",
+              "converged": true
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 5135.62,
+              "rse": 0.115552,
+              "windowDuration": "484.183ms",
+              "fileSizeBytes": 265668,
+              "windowSamplesK": 384,
+              "variance": 1247910.0,
+              "latencyNs": 49334.0,
+              "cyclesPerByte": null,
+              "verdict": "loss",
+              "converged": true
+            }
+          ]
+        },
+        {
+          "name": "copy_count[4096]-length[1-15]",
+          "params": {
+            "group": "branch-up-to",
+            "count": 4096,
+            "length": "1-15"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp_up_to",
+              "mbps": 1935.26,
+              "rse": 0.412263,
+              "windowDuration": "155.769ms",
+              "fileSizeBytes": 32774,
+              "windowSamplesK": 384,
+              "variance": 1702390.0,
+              "latencyNs": 16150.7,
+              "cyclesPerByte": null,
+              "verdict": "win",
+              "converged": true
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 714.323,
+              "rse": 0.157678,
+              "windowDuration": "428.347ms",
+              "fileSizeBytes": 32768,
+              "windowSamplesK": 384,
+              "variance": 1827170.0,
+              "latencyNs": 43747.3,
+              "cyclesPerByte": null,
+              "verdict": "loss",
+              "converged": true
+            }
+          ]
+        },
+        {
+          "name": "copy_count[4096]-length[1-16]",
+          "params": {
+            "group": "branch-up-to",
+            "count": 4096,
+            "length": "1-16"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp_up_to",
+              "mbps": 1850.52,
+              "rse": 0.234674,
+              "windowDuration": "175.52ms",
+              "fileSizeBytes": 34762,
+              "windowSamplesK": 96,
+              "variance": 169675.0,
+              "latencyNs": 17914.7,
+              "cyclesPerByte": null,
+              "verdict": "win",
+              "converged": true
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 764.077,
+              "rse": 0.171226,
+              "windowDuration": "431.171ms",
+              "fileSizeBytes": 34759,
+              "windowSamplesK": 192,
+              "variance": 1059490.0,
+              "latencyNs": 43384.0,
+              "cyclesPerByte": null,
+              "verdict": "loss",
+              "converged": true
+            }
+          ]
+        },
+        {
+          "name": "copy_count[4096]-length[1-17]",
+          "params": {
+            "group": "branch-up-to",
+            "count": 4096,
+            "length": "1-17"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp_up_to",
+              "mbps": 1892.89,
+              "rse": 0.160022,
+              "windowDuration": "183.778ms",
+              "fileSizeBytes": 36819,
+              "windowSamplesK": 384,
+              "variance": 338360.0,
+              "latencyNs": 18550.0,
+              "cyclesPerByte": null,
+              "verdict": "win",
+              "converged": true
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 799.606,
+              "rse": 0.355051,
+              "windowDuration": "429.415ms",
+              "fileSizeBytes": 36784,
+              "windowSamplesK": 48,
+              "variance": 1164660.0,
+              "latencyNs": 43872.0,
+              "cyclesPerByte": null,
+              "verdict": "loss",
+              "converged": true
+            }
+          ]
+        },
+        {
+          "name": "copy_count[4096]-length[1-31]",
+          "params": {
+            "group": "branch-up-to",
+            "count": 4096,
+            "length": "1-31"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp_up_to",
+              "mbps": 3496.24,
+              "rse": 0.302215,
+              "windowDuration": "185.289ms",
+              "fileSizeBytes": 65573,
+              "windowSamplesK": 214,
+              "variance": 625311.0,
+              "latencyNs": 17886.5,
+              "cyclesPerByte": null,
+              "verdict": "win",
+              "converged": true
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 1257.16,
+              "rse": 0.185113,
+              "windowDuration": "487.458ms",
+              "fileSizeBytes": 65546,
+              "windowSamplesK": 96,
+              "variance": 813308.0,
+              "latencyNs": 49722.7,
+              "cyclesPerByte": null,
+              "verdict": "loss",
+              "converged": true
+            }
+          ]
+        },
+        {
+          "name": "copy_count[4096]-length[1-32]",
+          "params": {
+            "group": "branch-up-to",
+            "count": 4096,
+            "length": "1-32"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp_up_to",
+              "mbps": 3244.85,
+              "rse": 0.319741,
+              "windowDuration": "194.781ms",
+              "fileSizeBytes": 67732,
+              "windowSamplesK": 192,
+              "variance": 777847.0,
+              "latencyNs": 19906.7,
+              "cyclesPerByte": null,
+              "verdict": "win",
+              "converged": true
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 1306.99,
+              "rse": 0.111389,
+              "windowDuration": "484.328ms",
+              "fileSizeBytes": 67721,
+              "windowSamplesK": 384,
+              "variance": 1163360.0,
+              "latencyNs": 49414.0,
+              "cyclesPerByte": null,
+              "verdict": "loss",
+              "converged": true
+            }
+          ]
+        },
+        {
+          "name": "copy_count[4096]-length[1-33]",
+          "params": {
+            "group": "branch-up-to",
+            "count": 4096,
+            "length": "1-33"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp_up_to",
+              "mbps": 3246.91,
+              "rse": 0.248593,
+              "windowDuration": "200.901ms",
+              "fileSizeBytes": 69827,
+              "windowSamplesK": 96,
+              "variance": 249547.0,
+              "latencyNs": 20509.3,
+              "cyclesPerByte": null,
+              "verdict": "win",
+              "converged": true
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 1346.57,
+              "rse": 0.108302,
+              "windowDuration": "485.684ms",
+              "fileSizeBytes": 69826,
+              "windowSamplesK": 384,
+              "variance": 1101500.0,
+              "latencyNs": 49452.7,
+              "cyclesPerByte": null,
+              "verdict": "loss",
+              "converged": true
+            }
+          ]
+        },
+        {
+          "name": "copy_count[4096]-length[1-63]",
+          "params": {
+            "group": "branch-up-to",
+            "count": 4096,
+            "length": "1-63"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp_up_to",
+              "mbps": 6825.95,
+              "rse": 0.268421,
+              "windowDuration": "182.612ms",
+              "fileSizeBytes": 131688,
+              "windowSamplesK": 214,
+              "variance": 521930.0,
+              "latencyNs": 18398.5,
+              "cyclesPerByte": null,
+              "verdict": "win",
+              "converged": true
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 2302.76,
+              "rse": 0.158498,
+              "windowDuration": "536.998ms",
+              "fileSizeBytes": 131711,
+              "windowSamplesK": 214,
+              "variance": 1599570.0,
+              "latencyNs": 54547.1,
+              "cyclesPerByte": null,
+              "verdict": "loss",
+              "converged": true
+            }
+          ]
+        },
+        {
+          "name": "copy_count[4096]-length[1-64]",
+          "params": {
+            "group": "branch-up-to",
+            "count": 4096,
+            "length": "1-64"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp_up_to",
+              "mbps": 6056.15,
+              "rse": 0.229232,
+              "windowDuration": "205.037ms",
+              "fileSizeBytes": 133033,
+              "windowSamplesK": 214,
+              "variance": 493503.0,
+              "latencyNs": 20948.9,
+              "cyclesPerByte": null,
+              "verdict": "win",
+              "converged": true
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 2342.81,
+              "rse": 0.172516,
+              "windowDuration": "529.35ms",
+              "fileSizeBytes": 133059,
+              "windowSamplesK": 384,
+              "variance": 3352740.0,
+              "latencyNs": 54163.3,
+              "cyclesPerByte": null,
+              "verdict": "loss",
+              "converged": true
+            }
+          ]
+        },
+        {
+          "name": "copy_count[4096]-length[1-65]",
+          "params": {
+            "group": "branch-up-to",
+            "count": 4096,
+            "length": "1-65"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp_up_to",
+              "mbps": 6068.67,
+              "rse": 0.220055,
+              "windowDuration": "208.446ms",
+              "fileSizeBytes": 135101,
+              "windowSamplesK": 384,
+              "variance": 838149.0,
+              "latencyNs": 21230.7,
+              "cyclesPerByte": null,
+              "verdict": "win",
+              "converged": true
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 2402.86,
+              "rse": 0.14507,
+              "windowDuration": "547.236ms",
+              "fileSizeBytes": 135115,
+              "windowSamplesK": 214,
+              "variance": 1295150.0,
+              "latencyNs": 53626.0,
+              "cyclesPerByte": null,
+              "verdict": "loss",
+              "converged": true
+            }
+          ]
+        }
+      ]
+    },
+    "windows-msvc": {
+      "cpu": "AMD EPYC 7763 64-Core Processor-AVX2",
+      "os": "Windows-10.0.26100",
+      "compiler": "MSVC-19.51.36260.0",
+      "harness": {
+        "clearCpuCachesBeforeIterations": true,
+        "measuredIterationCount": 60,
+        "maxIterationCount": 400,
+        "maxTimeInS": 10.0,
+        "convergenceThreshold": 5.0,
+        "rseThreshold": 10.0,
+        "maxK": 100000,
+        "minK": 30
+      },
+      "wtl": {
+        "memcpy_decomp": {
+          "wins": 12,
+          "ties": 0,
+          "losses": 0
+        },
+        "std_memcpy": {
+          "wins": 0,
+          "ties": 0,
+          "losses": 24
+        },
+        "memcpy_decomp_up_to": {
+          "wins": 12,
+          "ties": 0,
+          "losses": 0
+        }
+      },
+      "tests": [
+        {
+          "name": "copy_count[4096]-length[1-127]",
+          "params": {
+            "group": "branch-decomp",
+            "count": 4096,
+            "length": "1-127"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp",
+              "mbps": 8025.7,
+              "rse": 0.136158,
+              "windowDuration": "307.759ms",
+              "fileSizeBytes": 261303,
+              "windowSamplesK": 30,
+              "variance": 53620.7,
+              "latencyNs": 31050.0,
+              "cyclesPerByte": 0.290181,
+              "verdict": "win",
+              "converged": true
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 5337.74,
+              "rse": 0.425714,
+              "windowDuration": "455ms",
+              "fileSizeBytes": 261083,
+              "windowSamplesK": 214,
+              "variance": 8439030.0,
+              "latencyNs": 46646.7,
+              "cyclesPerByte": 0.436509,
+              "verdict": "loss",
+              "converged": true
+            }
+          ]
+        },
+        {
+          "name": "copy_count[4096]-length[1-128]",
+          "params": {
+            "group": "branch-decomp",
+            "count": 4096,
+            "length": "1-128"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp",
+              "mbps": 8136.49,
+              "rse": 0.504564,
+              "windowDuration": "302.279ms",
+              "fileSizeBytes": 263164,
+              "windowSamplesK": 384,
+              "variance": 9301280.0,
+              "latencyNs": 30845.3,
+              "cyclesPerByte": 0.28629,
+              "verdict": "win",
+              "converged": true
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 5352.53,
+              "rse": 0.454436,
+              "windowDuration": "458.465ms",
+              "fileSizeBytes": 263172,
+              "windowSamplesK": 384,
+              "variance": 17435700.0,
+              "latencyNs": 46890.1,
+              "cyclesPerByte": 0.435408,
+              "verdict": "loss",
+              "converged": true
+            }
+          ]
+        },
+        {
+          "name": "copy_count[4096]-length[1-129]",
+          "params": {
+            "group": "branch-decomp",
+            "count": 4096,
+            "length": "1-129"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp",
+              "mbps": 8269.09,
+              "rse": 0.22316,
+              "windowDuration": "304.098ms",
+              "fileSizeBytes": 265384,
+              "windowSamplesK": 30,
+              "variance": 139954.0,
+              "latencyNs": 30606.7,
+              "cyclesPerByte": 0.281506,
+              "verdict": "win",
+              "converged": true
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 5521.04,
+              "rse": 0.609036,
+              "windowDuration": "449.217ms",
+              "fileSizeBytes": 265614,
+              "windowSamplesK": 192,
+              "variance": 14991600.0,
+              "latencyNs": 45880.7,
+              "cyclesPerByte": 0.422068,
+              "verdict": "loss",
+              "converged": true
+            }
+          ]
+        },
+        {
+          "name": "copy_count[4096]-length[1-15]",
+          "params": {
+            "group": "branch-decomp",
+            "count": 4096,
+            "length": "1-15"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp",
+              "mbps": 1342.16,
+              "rse": 0.541197,
+              "windowDuration": "269.187ms",
+              "fileSizeBytes": 32770,
+              "windowSamplesK": 384,
+              "variance": 6097910.0,
+              "latencyNs": 23284.6,
+              "cyclesPerByte": 1.73481,
+              "verdict": "win",
+              "converged": true
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 732.222,
+              "rse": 0.457091,
+              "windowDuration": "418.299ms",
+              "fileSizeBytes": 32771,
+              "windowSamplesK": 192,
+              "variance": 7308060.0,
+              "latencyNs": 42682.3,
+              "cyclesPerByte": 3.18244,
+              "verdict": "loss",
+              "converged": true
+            }
+          ]
+        },
+        {
+          "name": "copy_count[4096]-length[1-16]",
+          "params": {
+            "group": "branch-decomp",
+            "count": 4096,
+            "length": "1-16"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp",
+              "mbps": 1327.45,
+              "rse": 0.110261,
+              "windowDuration": "248.362ms",
+              "fileSizeBytes": 34781,
+              "windowSamplesK": 48,
+              "variance": 36436.2,
+              "latencyNs": 24987.5,
+              "cyclesPerByte": 1.75477,
+              "verdict": "win",
+              "converged": true
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 773.732,
+              "rse": 0.467782,
+              "windowDuration": "418.718ms",
+              "fileSizeBytes": 34762,
+              "windowSamplesK": 384,
+              "variance": 15425700.0,
+              "latencyNs": 42846.4,
+              "cyclesPerByte": 3.01153,
+              "verdict": "loss",
+              "converged": true
+            }
+          ]
+        },
+        {
+          "name": "copy_count[4096]-length[1-17]",
+          "params": {
+            "group": "branch-decomp",
+            "count": 4096,
+            "length": "1-17"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp",
+              "mbps": 1414.22,
+              "rse": 0.39362,
+              "windowDuration": "243.239ms",
+              "fileSizeBytes": 36802,
+              "windowSamplesK": 384,
+              "variance": 3664370.0,
+              "latencyNs": 24817.4,
+              "cyclesPerByte": 1.6467,
+              "verdict": "win",
+              "converged": true
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 862.752,
+              "rse": 0.653953,
+              "windowDuration": "396.814ms",
+              "fileSizeBytes": 36789,
+              "windowSamplesK": 214,
+              "variance": 15134500.0,
+              "latencyNs": 40665.9,
+              "cyclesPerByte": 2.7006,
+              "verdict": "loss",
+              "converged": true
+            }
+          ]
+        },
+        {
+          "name": "copy_count[4096]-length[1-31]",
+          "params": {
+            "group": "branch-decomp",
+            "count": 4096,
+            "length": "1-31"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp",
+              "mbps": 2200.64,
+              "rse": 0.481015,
+              "windowDuration": "278.972ms",
+              "fileSizeBytes": 65535,
+              "windowSamplesK": 214,
+              "variance": 3993760.0,
+              "latencyNs": 28400.5,
+              "cyclesPerByte": 1.05844,
+              "verdict": "win",
+              "converged": true
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 1624.17,
+              "rse": 0.465901,
+              "windowDuration": "376.574ms",
+              "fileSizeBytes": 65576,
+              "windowSamplesK": 384,
+              "variance": 12358100.0,
+              "latencyNs": 38504.9,
+              "cyclesPerByte": 1.43449,
+              "verdict": "loss",
+              "converged": true
+            }
+          ]
+        },
+        {
+          "name": "copy_count[4096]-length[1-32]",
+          "params": {
+            "group": "branch-decomp",
+            "count": 4096,
+            "length": "1-32"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp",
+              "mbps": 2255.27,
+              "rse": 0.570624,
+              "windowDuration": "280.955ms",
+              "fileSizeBytes": 67732,
+              "windowSamplesK": 384,
+              "variance": 10257000.0,
+              "latencyNs": 28641.4,
+              "cyclesPerByte": 1.03287,
+              "verdict": "win",
+              "converged": true
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 1704.24,
+              "rse": 0.342974,
+              "windowDuration": "372.62ms",
+              "fileSizeBytes": 67718,
+              "windowSamplesK": 384,
+              "variance": 6486340.0,
+              "latencyNs": 37894.3,
+              "cyclesPerByte": 1.36704,
+              "verdict": "loss",
+              "converged": true
+            }
+          ]
+        },
+        {
+          "name": "copy_count[4096]-length[1-33]",
+          "params": {
+            "group": "branch-decomp",
+            "count": 4096,
+            "length": "1-33"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp",
+              "mbps": 2195.44,
+              "rse": 0.393187,
+              "windowDuration": "302.178ms",
+              "fileSizeBytes": 69796,
+              "windowSamplesK": 384,
+              "variance": 5456980.0,
+              "latencyNs": 30318.8,
+              "cyclesPerByte": 1.06109,
+              "verdict": "win",
+              "converged": true
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 1726.69,
+              "rse": 0.604026,
+              "windowDuration": "392.168ms",
+              "fileSizeBytes": 69800,
+              "windowSamplesK": 192,
+              "variance": 10411100.0,
+              "latencyNs": 38551.6,
+              "cyclesPerByte": 1.34939,
+              "verdict": "loss",
+              "converged": true
+            }
+          ]
+        },
+        {
+          "name": "copy_count[4096]-length[1-63]",
+          "params": {
+            "group": "branch-decomp",
+            "count": 4096,
+            "length": "1-63"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp",
+              "mbps": 4705.67,
+              "rse": 0.159011,
+              "windowDuration": "264.694ms",
+              "fileSizeBytes": 131695,
+              "windowSamplesK": 30,
+              "variance": 54034.5,
+              "latencyNs": 26690.0,
+              "cyclesPerByte": 0.495041,
+              "verdict": "win",
+              "converged": true
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 3502.86,
+              "rse": 0.496554,
+              "windowDuration": "351.208ms",
+              "fileSizeBytes": 131700,
+              "windowSamplesK": 384,
+              "variance": 12172700.0,
+              "latencyNs": 35856.0,
+              "cyclesPerByte": 0.66508,
+              "verdict": "loss",
+              "converged": true
+            }
+          ]
+        },
+        {
+          "name": "copy_count[4096]-length[1-64]",
+          "params": {
+            "group": "branch-decomp",
+            "count": 4096,
+            "length": "1-64"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp",
+              "mbps": 4567.77,
+              "rse": 0.59608,
+              "windowDuration": "272.13ms",
+              "fileSizeBytes": 133083,
+              "windowSamplesK": 384,
+              "variance": 10533500.0,
+              "latencyNs": 27785.4,
+              "cyclesPerByte": 0.509896,
+              "verdict": "win",
+              "converged": true
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 3368.85,
+              "rse": 0.644663,
+              "windowDuration": "367.915ms",
+              "fileSizeBytes": 133096,
+              "windowSamplesK": 214,
+              "variance": 12625400.0,
+              "latencyNs": 37677.6,
+              "cyclesPerByte": 0.691591,
+              "verdict": "loss",
+              "converged": true
+            }
+          ]
+        },
+        {
+          "name": "copy_count[4096]-length[1-65]",
+          "params": {
+            "group": "branch-decomp",
+            "count": 4096,
+            "length": "1-65"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp",
+              "mbps": 4794.54,
+              "rse": 0.159433,
+              "windowDuration": "266.346ms",
+              "fileSizeBytes": 135003,
+              "windowSamplesK": 30,
+              "variance": 54988.5,
+              "latencyNs": 26853.3,
+              "cyclesPerByte": 0.485566,
+              "verdict": "win",
+              "converged": true
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 3349.66,
+              "rse": 0.347744,
+              "windowDuration": "375.658ms",
+              "fileSizeBytes": 135108,
+              "windowSamplesK": 384,
+              "variance": 6870910.0,
+              "latencyNs": 38466.4,
+              "cyclesPerByte": 0.69552,
+              "verdict": "loss",
+              "converged": true
+            }
+          ]
+        },
+        {
+          "name": "copy_count[4096]-length[1-127]",
+          "params": {
+            "group": "branch-up-to",
+            "count": 4096,
+            "length": "1-127"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp_up_to",
+              "mbps": 9080.31,
+              "rse": 0.950561,
+              "windowDuration": "267.677ms",
+              "fileSizeBytes": 261193,
+              "windowSamplesK": 214,
+              "variance": 14551100.0,
+              "latencyNs": 27432.2,
+              "cyclesPerByte": 0.256464,
+              "verdict": "win",
+              "converged": true
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 5328.44,
+              "rse": 0.552403,
+              "windowDuration": "457.755ms",
+              "fileSizeBytes": 261054,
+              "windowSamplesK": 214,
+              "variance": 14255600.0,
+              "latencyNs": 46722.9,
+              "cyclesPerByte": 0.43735,
+              "verdict": "loss",
+              "converged": true
+            }
+          ]
+        },
+        {
+          "name": "copy_count[4096]-length[1-128]",
+          "params": {
+            "group": "branch-up-to",
+            "count": 4096,
+            "length": "1-128"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp_up_to",
+              "mbps": 8734.08,
+              "rse": 0.876938,
+              "windowDuration": "280.393ms",
+              "fileSizeBytes": 263170,
+              "windowSamplesK": 214,
+              "variance": 13589100.0,
+              "latencyNs": 28735.5,
+              "cyclesPerByte": 0.266641,
+              "verdict": "win",
+              "converged": true
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 5320.95,
+              "rse": 0.481991,
+              "windowDuration": "466.977ms",
+              "fileSizeBytes": 263145,
+              "windowSamplesK": 384,
+              "variance": 19843700.0,
+              "latencyNs": 47163.5,
+              "cyclesPerByte": 0.437953,
+              "verdict": "loss",
+              "converged": true
+            }
+          ]
+        },
+        {
+          "name": "copy_count[4096]-length[1-129]",
+          "params": {
+            "group": "branch-up-to",
+            "count": 4096,
+            "length": "1-129"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp_up_to",
+              "mbps": 8920.58,
+              "rse": 0.325464,
+              "windowDuration": "280.703ms",
+              "fileSizeBytes": 265807,
+              "windowSamplesK": 30,
+              "variance": 256609.0,
+              "latencyNs": 28416.7,
+              "cyclesPerByte": 0.261069,
+              "verdict": "win",
+              "converged": true
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 5492.39,
+              "rse": 0.448913,
+              "windowDuration": "451.956ms",
+              "fileSizeBytes": 265668,
+              "windowSamplesK": 384,
+              "variance": 16466900.0,
+              "latencyNs": 46129.4,
+              "cyclesPerByte": 0.424258,
+              "verdict": "loss",
+              "converged": true
+            }
+          ]
+        },
+        {
+          "name": "copy_count[4096]-length[1-15]",
+          "params": {
+            "group": "branch-up-to",
+            "count": 4096,
+            "length": "1-15"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp_up_to",
+              "mbps": 1390.88,
+              "rse": 0.194142,
+              "windowDuration": "223.221ms",
+              "fileSizeBytes": 32752,
+              "windowSamplesK": 30,
+              "variance": 57023.0,
+              "latencyNs": 22456.7,
+              "cyclesPerByte": 1.67551,
+              "verdict": "win",
+              "converged": true
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 729.922,
+              "rse": 0.617625,
+              "windowDuration": "419.651ms",
+              "fileSizeBytes": 32781,
+              "windowSamplesK": 192,
+              "variance": 13435100.0,
+              "latencyNs": 42829.7,
+              "cyclesPerByte": 3.19197,
+              "verdict": "loss",
+              "converged": true
+            }
+          ]
+        },
+        {
+          "name": "copy_count[4096]-length[1-16]",
+          "params": {
+            "group": "branch-up-to",
+            "count": 4096,
+            "length": "1-16"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp_up_to",
+              "mbps": 1335.18,
+              "rse": 0.175018,
+              "windowDuration": "247.05ms",
+              "fileSizeBytes": 34763,
+              "windowSamplesK": 30,
+              "variance": 56655.2,
+              "latencyNs": 24830.0,
+              "cyclesPerByte": 1.74432,
+              "verdict": "win",
+              "converged": true
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 774.295,
+              "rse": 0.603587,
+              "windowDuration": "419.553ms",
+              "fileSizeBytes": 34759,
+              "windowSamplesK": 192,
+              "variance": 12820400.0,
+              "latencyNs": 42811.5,
+              "cyclesPerByte": 3.00949,
+              "verdict": "loss",
+              "converged": true
+            }
+          ]
+        },
+        {
+          "name": "copy_count[4096]-length[1-17]",
+          "params": {
+            "group": "branch-up-to",
+            "count": 4096,
+            "length": "1-17"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp_up_to",
+              "mbps": 1377.88,
+              "rse": 0.171481,
+              "windowDuration": "252.752ms",
+              "fileSizeBytes": 36798,
+              "windowSamplesK": 48,
+              "variance": 91555.9,
+              "latencyNs": 25468.8,
+              "cyclesPerByte": 1.68963,
+              "verdict": "win",
+              "converged": true
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 863.065,
+              "rse": 0.636671,
+              "windowDuration": "398.945ms",
+              "fileSizeBytes": 36802,
+              "windowSamplesK": 192,
+              "variance": 12870200.0,
+              "latencyNs": 40665.6,
+              "cyclesPerByte": 2.69978,
+              "verdict": "loss",
+              "converged": true
+            }
+          ]
+        },
+        {
+          "name": "copy_count[4096]-length[1-31]",
+          "params": {
+            "group": "branch-up-to",
+            "count": 4096,
+            "length": "1-31"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp_up_to",
+              "mbps": 2595.22,
+              "rse": 0.500347,
+              "windowDuration": "236.685ms",
+              "fileSizeBytes": 65575,
+              "windowSamplesK": 384,
+              "variance": 5582080.0,
+              "latencyNs": 24096.9,
+              "cyclesPerByte": 0.897339,
+              "verdict": "win",
+              "converged": true
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 1617.37,
+              "rse": 0.627027,
+              "windowDuration": "378.629ms",
+              "fileSizeBytes": 65553,
+              "windowSamplesK": 214,
+              "variance": 12570400.0,
+              "latencyNs": 38652.8,
+              "cyclesPerByte": 1.44057,
+              "verdict": "loss",
+              "converged": true
+            }
+          ]
+        },
+        {
+          "name": "copy_count[4096]-length[1-32]",
+          "params": {
+            "group": "branch-up-to",
+            "count": 4096,
+            "length": "1-32"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp_up_to",
+              "mbps": 2387.53,
+              "rse": 0.399744,
+              "windowDuration": "265.117ms",
+              "fileSizeBytes": 67738,
+              "windowSamplesK": 384,
+              "variance": 4492170.0,
+              "latencyNs": 27057.0,
+              "cyclesPerByte": 0.975547,
+              "verdict": "win",
+              "converged": true
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 1719.8,
+              "rse": 0.174492,
+              "windowDuration": "372.525ms",
+              "fileSizeBytes": 67715,
+              "windowSamplesK": 30,
+              "variance": 128793.0,
+              "latencyNs": 37550.0,
+              "cyclesPerByte": 1.35473,
+              "verdict": "loss",
+              "converged": true
+            }
+          ]
+        },
+        {
+          "name": "copy_count[4096]-length[1-33]",
+          "params": {
+            "group": "branch-up-to",
+            "count": 4096,
+            "length": "1-33"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp_up_to",
+              "mbps": 2333.22,
+              "rse": 0.59415,
+              "windowDuration": "279.361ms",
+              "fileSizeBytes": 69826,
+              "windowSamplesK": 384,
+              "variance": 11042100.0,
+              "latencyNs": 28540.6,
+              "cyclesPerByte": 0.998238,
+              "verdict": "win",
+              "converged": true
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 1715.29,
+              "rse": 0.702035,
+              "windowDuration": "380.395ms",
+              "fileSizeBytes": 69824,
+              "windowSamplesK": 214,
+              "variance": 15895200.0,
+              "latencyNs": 38821.0,
+              "cyclesPerByte": 1.35831,
+              "verdict": "loss",
+              "converged": true
+            }
+          ]
+        },
+        {
+          "name": "copy_count[4096]-length[1-63]",
+          "params": {
+            "group": "branch-up-to",
+            "count": 4096,
+            "length": "1-63"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp_up_to",
+              "mbps": 4793.33,
+              "rse": 0.683602,
+              "windowDuration": "255.861ms",
+              "fileSizeBytes": 131679,
+              "windowSamplesK": 384,
+              "variance": 12316800.0,
+              "latencyNs": 26198.7,
+              "cyclesPerByte": 0.485896,
+              "verdict": "win",
+              "converged": true
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 3478.45,
+              "rse": 0.637797,
+              "windowDuration": "352.141ms",
+              "fileSizeBytes": 131759,
+              "windowSamplesK": 384,
+              "variance": 20383900.0,
+              "latencyNs": 36124.0,
+              "cyclesPerByte": 0.669695,
+              "verdict": "loss",
+              "converged": true
+            }
+          ]
+        },
+        {
+          "name": "copy_count[4096]-length[1-64]",
+          "params": {
+            "group": "branch-up-to",
+            "count": 4096,
+            "length": "1-64"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp_up_to",
+              "mbps": 4372.19,
+              "rse": 0.54636,
+              "windowDuration": "284.73ms",
+              "fileSizeBytes": 132981,
+              "windowSamplesK": 384,
+              "variance": 9644350.0,
+              "latencyNs": 29006.2,
+              "cyclesPerByte": 0.532693,
+              "verdict": "win",
+              "converged": true
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 3529.45,
+              "rse": 0.765641,
+              "windowDuration": "355.362ms",
+              "fileSizeBytes": 133034,
+              "windowSamplesK": 192,
+              "variance": 14543200.0,
+              "latencyNs": 35946.4,
+              "cyclesPerByte": 0.660207,
+              "verdict": "loss",
+              "converged": true
+            }
+          ]
+        },
+        {
+          "name": "copy_count[4096]-length[1-65]",
+          "params": {
+            "group": "branch-up-to",
+            "count": 4096,
+            "length": "1-65"
+          },
+          "rows": [
+            {
+              "lib": "memcpy_decomp_up_to",
+              "mbps": 4388.41,
+              "rse": 0.500964,
+              "windowDuration": "287.674ms",
+              "fileSizeBytes": 135073,
+              "windowSamplesK": 192,
+              "variance": 4151820.0,
+              "latencyNs": 29353.6,
+              "cyclesPerByte": 0.530793,
+              "verdict": "win",
+              "converged": true
+            },
+            {
+              "lib": "std_memcpy",
+              "mbps": 3509.65,
+              "rse": 0.530655,
+              "windowDuration": "361.478ms",
+              "fileSizeBytes": 135103,
+              "windowSamplesK": 96,
+              "variance": 3643340.0,
+              "latencyNs": 36711.5,
+              "cyclesPerByte": 0.66384,
+              "verdict": "loss",
+              "converged": true
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
